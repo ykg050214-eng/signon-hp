@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-expression" viewBox="0 0 48 48">
+    <path d="M13 33c7-9 15-9 22 0"/>
+    <path d="M16 18h.1M32 18h.1"/>
+    <path d="M10 13c7-6 21-6 28 0"/>
+    <path d="M9 38h30"/>
+  </symbol>
+  <symbol id="icon-search" viewBox="0 0 48 48">
+    <circle cx="21" cy="21" r="12"/>
+    <path d="m30 30 9 9"/>
+    <path d="M17 20h8M21 16v8"/>
+  </symbol>
+  <symbol id="icon-team" viewBox="0 0 48 48">
+    <circle cx="18" cy="17" r="6"/>
+    <circle cx="32" cy="19" r="5"/>
+    <path d="M8 38c2-8 7-12 14-12s12 4 14 12"/>
+    <path d="M29 29c5 .5 8 4 10 9"/>
+  </symbol>
+  <symbol id="icon-ethics" viewBox="0 0 48 48">
+    <path d="M24 7 38 13v11c0 9-5 14-14 18-9-4-14-9-14-18V13l14-6Z"/>
+    <path d="m17 24 5 5 10-11"/>
+  </symbol>
+  <symbol id="icon-create" viewBox="0 0 48 48">
+    <path d="M24 6v8M24 34v8M6 24h8M34 24h8"/>
+    <path d="m11 11 6 6M31 31l6 6M37 11l-6 6M17 31l-6 6"/>
+    <circle cx="24" cy="24" r="7"/>
+  </symbol>
+  <symbol id="icon-art" viewBox="0 0 48 48">
+    <path d="M24 7c-9 0-16 6-16 14 0 9 7 16 16 16h3c3 0 5 2 5 4 5-2 8-7 8-14C40 16 33 7 24 7Z"/>
+    <circle cx="17" cy="20" r="2"/>
+    <circle cx="24" cy="16" r="2"/>
+    <circle cx="31" cy="21" r="2"/>
+    <path d="M20 29h8"/>
+  </symbol>
+  <symbol id="icon-book" viewBox="0 0 48 48">
+    <path d="M8 11h12c3 0 4 2 4 5v25c0-3-2-5-5-5H8V11Z"/>
+    <path d="M40 11H28c-3 0-4 2-4 5v25c0-3 2-5 5-5h11V11Z"/>
+    <path d="M15 19h4M15 26h4M29 19h4M29 26h4"/>
+  </symbol>
+  <symbol id="icon-game" viewBox="0 0 48 48">
+    <rect x="8" y="17" width="32" height="18" rx="7"/>
+    <path d="M17 26h8M21 22v8"/>
+    <path d="M31 25h.1M35 28h.1"/>
+  </symbol>
+  <symbol id="icon-presentation" viewBox="0 0 48 48">
+    <rect x="9" y="9" width="30" height="22" rx="3"/>
+    <path d="M16 38h16M24 31v7"/>
+    <path d="M17 25v-7M24 25V15M31 25v-4"/>
+  </symbol>
+  <symbol id="icon-research" viewBox="0 0 48 48">
+    <path d="M15 10h18l5 5v23H15V10Z"/>
+    <path d="M32 10v6h6"/>
+    <path d="M20 21h12M20 28h8"/>
+    <path d="m14 34-5 5"/>
+    <circle cx="16" cy="32" r="5"/>
+  </symbol>
+  <symbol id="icon-dialogue" viewBox="0 0 48 48">
+    <path d="M9 13h22a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6H20l-9 7v-7H9a6 6 0 0 1-6-6v-5a6 6 0 0 1 6-6Z"/>
+    <path d="M17 21h13M17 26h8"/>
+  </symbol>
+  <symbol id="icon-question" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="17"/>
+    <path d="M19 19a5 5 0 0 1 10 1c0 5-5 5-5 9"/>
+    <path d="M24 35h.1"/>
+  </symbol>
+  <symbol id="icon-thinking" viewBox="0 0 48 48">
+    <path d="M24 7a13 13 0 0 0-8 23v5h16v-5A13 13 0 0 0 24 7Z"/>
+    <path d="M19 41h10M19 35h10"/>
+    <path d="M19 22c2-4 8-4 10 0"/>
+  </symbol>
+  <symbol id="icon-identity" viewBox="0 0 48 48">
+    <circle cx="24" cy="16" r="7"/>
+    <path d="M11 40c2-9 7-14 13-14s11 5 13 14"/>
+    <path d="m36 9 2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1 2-4Z"/>
+  </symbol>
+  <symbol id="icon-future" viewBox="0 0 48 48">
+    <path d="M24 6v36"/>
+    <path d="M10 32c10 0 14-7 14-16 0 9 4 16 14 16"/>
+    <path d="M12 14c5 0 9 4 12 10 3-6 7-10 12-10"/>
+  </symbol>
+  <symbol id="icon-lightbulb" viewBox="0 0 48 48">
+    <path d="M24 7a12 12 0 0 0-7 22v5h14v-5A12 12 0 0 0 24 7Z"/>
+    <path d="M19 40h10M20 34h8"/>
+    <path d="M24 2v3M9 9l3 3M39 9l-3 3"/>
+  </symbol>
+  <symbol id="icon-chat" viewBox="0 0 48 48">
+    <path d="M10 12h28a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6H25l-10 7v-7h-5a6 6 0 0 1-6-6V18a6 6 0 0 1 6-6Z"/>
+    <path d="M16 23h.1M24 23h.1M32 23h.1"/>
+  </symbol>
+  <symbol id="icon-pencil" viewBox="0 0 48 48">
+    <path d="M12 34 34 12l6 6-22 22-9 3 3-9Z"/>
+    <path d="m30 16 6 6"/>
+  </symbol>
+  <symbol id="icon-people" viewBox="0 0 48 48">
+    <circle cx="18" cy="17" r="6"/>
+    <circle cx="32" cy="18" r="5"/>
+    <path d="M7 39c2-8 6-12 12-12s10 4 12 12"/>
+    <path d="M30 29c5 .7 8 4 10 10"/>
+  </symbol>
+  <symbol id="icon-music" viewBox="0 0 48 48">
+    <path d="M31 10v25"/>
+    <path d="M31 10 40 8v8l-9 2"/>
+    <circle cx="20" cy="35" r="6"/>
+    <path d="M26 35V16"/>
+  </symbol>
+  <symbol id="icon-video" viewBox="0 0 48 48">
+    <rect x="8" y="13" width="25" height="22" rx="4"/>
+    <path d="m33 22 8-5v14l-8-5"/>
+    <path d="m18 20 8 5-8 5V20Z"/>
+  </symbol>
+  <symbol id="icon-shield" viewBox="0 0 48 48">
+    <path d="M24 6 39 13v10c0 10-5 16-15 20C14 39 9 33 9 23V13l15-7Z"/>
+    <path d="m17 25 5 5 10-12"/>
+  </symbol>
+  <symbol id="icon-lock" viewBox="0 0 48 48">
+    <rect x="11" y="21" width="26" height="19" rx="4"/>
+    <path d="M17 21v-5a7 7 0 0 1 14 0v5"/>
+    <path d="M24 29v4"/>
+  </symbol>
+  <symbol id="icon-home" viewBox="0 0 48 48">
+    <path d="M7 24 24 10l17 14"/>
+    <path d="M12 22v18h24V22"/>
+    <path d="M20 40V29h8v11"/>
+  </symbol>
+  <symbol id="icon-heart" viewBox="0 0 48 48">
+    <path d="M24 40S9 31 9 18a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 13-15 22-15 22Z"/>
+  </symbol>
+  <symbol id="icon-refresh" viewBox="0 0 48 48">
+    <path d="M39 24a15 15 0 1 1-5-11"/>
+    <path d="M39 8v12H27"/>
+  </symbol>
+  <symbol id="icon-target" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="17"/>
+    <circle cx="24" cy="24" r="10"/>
+    <circle cx="24" cy="24" r="3"/>
+  </symbol>
+</svg>

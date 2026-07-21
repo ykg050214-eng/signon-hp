@@ -1,0 +1,71 @@
+<svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgG5" cx="60%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#F8D5CB"></stop>
+      <stop offset="100%" stop-color="#EDE5D2"></stop>
+    </radialGradient>
+    <linearGradient id="appGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E26D5A"></stop>
+      <stop offset="100%" stop-color="#A84030"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="640" fill="url(#bgG5)"></rect>
+  
+  <ellipse cx="400" cy="600" rx="360" ry="30" fill="#1A1A1A" opacity="0.07"></ellipse>
+  
+  <g transform="translate(280 360)">
+    
+    <rect x="-50" y="160" width="38" height="120" rx="10" fill="#3D3733"></rect>
+    <rect x="12" y="160" width="38" height="120" rx="10" fill="#3D3733"></rect>
+    
+    <rect x="-58" y="270" width="50" height="18" rx="6" fill="#1A1A1A"></rect>
+    <rect x="8" y="270" width="50" height="18" rx="6" fill="#1A1A1A"></rect>
+    
+    <path d="M -75 -10 Q -90 30 -85 170 L 85 170 Q 90 30 75 -10 Q 40 5 0 5 Q -40 5 -75 -10 Z" fill="#7B82C9"></path>
+    
+    <ellipse cx="0" cy="-80" rx="58" ry="68" fill="#3A2B1F"></ellipse>
+    <circle cx="0" cy="-70" r="48" fill="#E8B58A"></circle>
+    <path d="M -48 -75 Q -42 -120 0 -120 Q 42 -120 48 -75 Q 30 -90 0 -88 Q -30 -90 -48 -75 Z" fill="#3A2B1F"></path>
+    
+    <circle cx="-16" cy="-60" r="11" stroke="#1A1A1A" stroke-width="3" fill="none"></circle>
+    <circle cx="16" cy="-60" r="11" stroke="#1A1A1A" stroke-width="3" fill="none"></circle>
+    <line x1="-5" y1="-60" x2="5" y2="-60" stroke="#1A1A1A" stroke-width="2.5"></line>
+    
+    <circle cx="-16" cy="-60" r="3" fill="#1A1A1A"></circle>
+    <circle cx="16" cy="-60" r="3" fill="#1A1A1A"></circle>
+    
+    <path d="M -12 -42 Q 0 -34 12 -42" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" fill="none"></path>
+    
+    <path d="M 75 30 Q 130 30 170 -10" stroke="#E8B58A" stroke-width="22" stroke-linecap="round" fill="none"></path>
+  </g>
+  
+  <g transform="translate(560 270)">
+    <rect x="-90" y="-110" width="220" height="220" rx="14" fill="#1A1A1A"></rect>
+    <rect x="-82" y="-102" width="204" height="204" rx="6" fill="url(#appGrad)"></rect>
+    
+    <rect x="-70" y="-90" width="80" height="80" rx="8" fill="#F5EFE3"></rect>
+    <text x="-30" y="-45" text-anchor="middle" font-size="32">🎮</text>
+    <rect x="20" y="-90" width="80" height="80" rx="8" fill="#7B82C9"></rect>
+    <text x="60" y="-45" text-anchor="middle" font-size="32">🎵</text>
+    <rect x="-70" y="0" width="80" height="80" rx="8" fill="#5BAF7E"></rect>
+    <text x="-30" y="45" text-anchor="middle" font-size="32">🎨</text>
+    <rect x="20" y="0" width="80" height="80" rx="8" fill="#E8B546"></rect>
+    <text x="60" y="45" text-anchor="middle" font-size="32">🎬</text>
+    
+    <rect x="-82" y="-102" width="204" height="22" rx="6" fill="#1A1A1A" opacity="0.3"></rect>
+    <circle cx="-66" cy="-91" r="3.5" fill="#FF5F57"></circle>
+    <circle cx="-54" cy="-91" r="3.5" fill="#FEBC2E"></circle>
+    <circle cx="-42" cy="-91" r="3.5" fill="#28C840"></circle>
+    
+    <rect x="-10" y="110" width="20" height="40" fill="#EDE5D2"></rect>
+    <rect x="-60" y="150" width="120" height="10" rx="3" fill="#EDE5D2"></rect>
+  </g>
+  
+  <g>
+    <circle cx="150" cy="160" r="34" fill="#E8B546" stroke="#1A1A1A" stroke-width="3"></circle>
+    <text x="150" y="170" text-anchor="middle" font-size="28">★</text>
+  </g>
+  <g fill="#E26D5A">
+    <path d="M 720 360 L 727 376 L 743 381 L 727 386 L 720 402 L 713 386 L 697 381 L 713 376 Z"></path>
+  </g>
+</svg>

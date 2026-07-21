@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>体験について｜SIGNON</title>
+<meta name="description" content="SIGNONの体験会は&quot;思考のプロセスを観察する時間&quot;。Studio for Thinking — AIと一緒に考える力を、3つのフェーズと6つのステップで育てます。" />
+<link rel="stylesheet" href="styles.css?v=mobile-linebreak-20260606" />
+<style>
+  /* ===== Experience page — visual rebuild ===== */
+  .xp2-hero {
+    position: relative; padding: clamp(64px, 8vw, 110px) 0 clamp(48px, 6vw, 80px);
+    overflow: hidden;
+  }
+  .xp2-hero::before, .xp2-hero::after {
+    content: ""; position: absolute; z-index: 0; border-radius: 50%; filter: blur(20px);
+  }
+  .xp2-hero::before { width: 560px; height: 560px; top: -180px; right: -160px;
+    background: radial-gradient(circle, color-mix(in oklch, var(--coral) 40%, transparent), transparent 70%); }
+  .xp2-hero::after  { width: 420px; height: 420px; bottom: -160px; left: -120px;
+    background: radial-gradient(circle, color-mix(in oklch, var(--peri) 32%, transparent), transparent 70%); }
+
+  .xp2-hero__inner {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center;
+  }
+  .xp2-hero__kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
+    color: var(--coral-deep); text-transform: uppercase;
+  }
+  .xp2-hero__kicker::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral);
+    box-shadow: 0 0 0 4px color-mix(in oklch, var(--coral) 25%, transparent);
+  }
+  .xp2-hero__title {
+    margin: 22px 0 26px;
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(40px, 6.2vw, 84px); line-height: 1.05; letter-spacing: -0.01em;
+  }
+  .xp2-hero__title em {
+    font-style: normal; position: relative;
+    background: linear-gradient(120deg, var(--coral), var(--coral-deep));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .xp2-hero__title em::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 14px;
+    background: var(--coral-soft); z-index: -1; border-radius: 8px;
+  }
+  .xp2-hero__sub { font-family: var(--font-display); font-weight: 700; font-size: clamp(17px, 1.55vw, 22px); line-height: 1.75; color: var(--ink); margin: 0 0 36px; max-width: 540px; }
+
+  /* Hero visual collage */
+  .xp2-collage {
+    position: relative; aspect-ratio: 1/1.05;
+  }
+  .xp2-collage__main {
+    position: absolute; inset: 4% 8% 18% 0;
+    border-radius: var(--r-xl); overflow: hidden;
+    background: url('images/generated/xp-hero-main-ai.jpg') center/cover no-repeat, var(--cream-2);
+    box-shadow: 0 30px 60px -28px rgba(20,20,40,.25);
+  }
+  .xp2-collage__sub {
+    position: absolute; right: 0; bottom: 0; width: 55%; aspect-ratio: 4/3;
+    border-radius: var(--r-lg); overflow: hidden; border: 6px solid var(--cream);
+    background: url('images/generated/xp-hero-sub-ai.jpg') center/cover no-repeat, var(--cream-2);
+    box-shadow: 0 24px 50px -20px rgba(20,20,40,.3);
+  }
+  .xp2-collage__chip {
+    position: absolute; background: var(--cream); border-radius: 14px;
+    padding: 12px 16px; box-shadow: 0 12px 30px -14px rgba(20,20,40,.3);
+    font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 10px;
+    z-index: 3;
+  }
+  .xp2-collage__chip svg { flex-shrink: 0; }
+  .xp2-collage__chip--1 { top: 8%; left: -18px; }
+  .xp2-collage__chip--2 { top: 38%; right: -28px; background: var(--ink); color: var(--cream); }
+  .xp2-collage__chip--3 { bottom: 4%; left: 12%; }
+  .xp2-collage__deco { position: absolute; z-index: 4; }
+  .xp2-collage__deco--star { top: 28%; right: 18%; animation: spin 14s linear infinite; }
+  .xp2-collage__deco--dots { bottom: 22%; right: 6%; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 900px) {
+    .xp2-hero__inner { grid-template-columns: 1fr; }
+    .xp2-collage { max-width: 480px; margin: 0 auto; width: 100%; }
+  }
+
+  /* Marquee strip */
+  .xp2-strip {
+    background: var(--ink); color: var(--cream);
+    padding: 22px 0; overflow: hidden;
+    border-top: 1px solid color-mix(in oklch, var(--ink) 60%, var(--cream));
+  }
+  .xp2-strip__track { display: flex; gap: 56px; white-space: nowrap; animation: scrollx 32s linear infinite; }
+  .xp2-strip__item { display: inline-flex; align-items: center; gap: 22px; font-family: var(--font-display); font-weight: 900; font-size: 22px; }
+  .xp2-strip__item::after { content: "✦"; color: var(--coral); font-size: 18px; margin-left: 22px; }
+  @keyframes scrollx { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ===== Worry — pictorial ===== */
+  .xp2-worry { padding: clamp(80px, 9vw, 120px) 0; }
+  .xp2-worry__inner {
+    display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center;
+  }
+  .xp2-worry__visual {
+    position: relative; aspect-ratio: 1/1;
+  }
+  .bubble {
+    position: absolute; background: var(--cream); border: 1.5px solid var(--line);
+    border-radius: 26px; padding: 18px 22px; font-family: var(--font-display); font-weight: 700;
+    font-size: 15px; line-height: 1.55; box-shadow: 0 18px 40px -22px rgba(20,20,40,.2);
+    max-width: 280px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    align-items: start;
+  }
+  .bubble__text {
+    min-width: 0;
+  }
+  .bubble::after {
+    content: ""; position: absolute; width: 22px; height: 22px;
+    background: var(--cream); border-right: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line);
+    bottom: -12px; left: 36px; transform: rotate(45deg);
+  }
+  .bubble--1 { top: 4%; left: 2%; transform: rotate(-3deg); }
+  .bubble--2 { top: 30%; right: 0; transform: rotate(2deg); }
+  .bubble--3 { bottom: 18%; left: 8%; transform: rotate(-1.5deg); }
+  .bubble__tag {
+    display: inline-block; font-family: var(--font-mono); font-size: 13px;
+    font-weight: 900;
+    background: var(--coral-soft); color: var(--coral-deep); padding: 3px 9px;
+    border-radius: 999px; letter-spacing: 0.08em; margin: 2px 0 0;
+    white-space: nowrap;
+  }
+  .xp2-worry__big-q {
+    position: absolute; right: 4%; bottom: 4%;
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 220px; line-height: 0.9;
+    color: color-mix(in oklch, var(--coral) 18%, transparent);
+    z-index: -1; pointer-events: none;
+  }
+  .xp2-worry__copy h2 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(32px, 4.4vw, 52px); line-height: 1.25; margin: 18px 0 24px;
+  }
+  .xp2-worry__copy h2 em { font-style: normal; color: var(--coral); }
+  .xp2-worry__copy p { font-size: 16px; line-height: 1.95; color: var(--ink-soft); margin: 0 0 16px; }
+  .xp2-worry__answer {
+    margin-top: 24px; padding: 24px 28px; background: var(--ink); color: var(--cream);
+    border-radius: var(--r-lg); position: relative;
+  }
+  .xp2-worry__answer::before {
+    content: "A."; position: absolute; top: 18px; right: 22px;
+    font-family: var(--font-display); font-weight: 900; font-size: 40px; color: var(--coral); opacity: .6;
+  }
+  .xp2-worry__answer strong { color: var(--coral); }
+  @media (max-width: 900px) { .xp2-worry__inner { grid-template-columns: 1fr; } .xp2-worry__visual { max-width: 460px; margin: 0 auto; width: 100%; } }
+
+  /* ===== Philosophy split ===== */
+  .xp2-philo {
+    padding: clamp(80px, 10vw, 130px) 0;
+    background: var(--ink); color: var(--cream);
+    position: relative; overflow: hidden;
+  }
+  .xp2-philo::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 12% 18%, color-mix(in oklch, var(--coral) 30%, transparent), transparent 50%),
+      radial-gradient(circle at 88% 82%, color-mix(in oklch, var(--peri) 30%, transparent), transparent 50%);
+    opacity: .8;
+  }
+  .xp2-philo__inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+  .xp2-philo__eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; color: var(--coral); text-transform: uppercase; }
+  .xp2-philo__big {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(36px, 5.6vw, 76px); line-height: 1.15; letter-spacing: -0.01em;
+    margin: 22px 0 0;
+  }
+  .xp2-philo__big em {
+    font-style: normal; position: relative; display: inline-block;
+  }
+  .xp2-philo__big em.x { color: color-mix(in oklch, var(--cream) 40%, transparent); }
+  .xp2-philo__big em.x::after {
+    content: "✕"; position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%); font-size: 1.2em; color: var(--coral);
+  }
+  .xp2-philo__big em.o { color: var(--coral); }
+  .xp2-philo__compare {
+    margin-top: 56px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: stretch;
+  }
+  .xp2-philo__card {
+    padding: 32px; border-radius: var(--r-lg);
+    background: color-mix(in oklch, var(--cream) 8%, transparent);
+    border: 1px solid color-mix(in oklch, var(--cream) 18%, transparent);
+  }
+  .xp2-philo__card--bad { opacity: .65; }
+  .xp2-philo__card--good { background: var(--coral); color: var(--ink); border-color: var(--coral); }
+  .xp2-philo__card__label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .7; }
+  .xp2-philo__card h3 { font-family: var(--font-display); font-weight: 900; font-size: 24px; margin: 12px 0 16px; line-height: 1.3; }
+  .xp2-philo__card p { font-size: 14px; line-height: 1.85; margin: 0; opacity: .9; }
+  .xp2-philo__arrow {
+    display: grid; place-items: center; font-family: var(--font-mono);
+    font-size: 36px; color: var(--coral);
+  }
+  @media (max-width: 800px) {
+    .xp2-philo__compare { grid-template-columns: 1fr; }
+    .xp2-philo__arrow { transform: rotate(90deg); padding: 4px 0; }
+  }
+
+  /* ===== Cycle — flowchart ===== */
+  .xp2-cycle { padding: clamp(80px, 10vw, 130px) 0; background: var(--cream-2); position: relative; overflow: hidden; }
+  .xp2-cycle__head { text-align: center; margin-bottom: 72px; }
+  .xp2-cycle__head h2 { margin-top: 18px; }
+  .xp2-cycle__flow {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    max-width: 1120px; margin: 0 auto; position: relative;
+  }
+  .xp2-cycle__flow::before {
+    content: ""; position: absolute; top: 36px; left: 8%; right: 8%; height: 2px;
+    background: repeating-linear-gradient(to right, var(--coral) 0 8px, transparent 8px 16px);
+    z-index: 0;
+  }
+  .xp2-phase {
+    position: relative; z-index: 1; background: var(--cream); border-radius: var(--r-xl);
+    padding: 36px 28px 32px; border: 1px solid var(--line);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .xp2-phase:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -24px rgba(20,20,40,.2); }
+  .xp2-phase__num {
+    width: 72px; height: 72px; border-radius: 50%; margin: -64px auto 0;
+    background: var(--coral); color: var(--cream);
+    display: grid; place-items: center;
+    font-family: var(--font-display); font-weight: 900; font-size: 32px;
+    box-shadow: 0 12px 28px -10px color-mix(in oklch, var(--coral) 60%, transparent);
+    position: relative; z-index: 2;
+  }
+  .xp2-phase--2 .xp2-phase__num { background: var(--peri); box-shadow: 0 12px 28px -10px color-mix(in oklch, var(--peri) 60%, transparent); }
+  .xp2-phase--3 .xp2-phase__num { background: oklch(55% 0.15 140); box-shadow: 0 12px 28px -10px color-mix(in oklch, oklch(55% 0.15 140) 60%, transparent); }
+  .xp2-phase__tag {
+    display: inline-block; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--coral-deep); margin-top: 22px;
+  }
+  .xp2-phase--2 .xp2-phase__tag { color: var(--peri-deep); }
+  .xp2-phase--3 .xp2-phase__tag { color: oklch(40% 0.14 140); }
+  .xp2-phase__title { font-family: var(--font-display); font-weight: 900; font-size: 26px; line-height: 1.3; margin: 10px 0 8px; text-align: center; }
+  .xp2-phase__sub { font-size: 13px; color: var(--ink-soft); margin: 0; text-align: center; line-height: 1.7; }
+  .xp2-phase__steps { margin-top: 28px; display: grid; gap: 12px; }
+  .xp2-step {
+    background: var(--cream-2); border-radius: var(--r-md);
+    padding: 14px 16px; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+  }
+  .xp2-step__no {
+    font-family: var(--font-mono); font-size: 11px;
+    background: var(--coral); color: var(--cream); padding: 4px 8px; border-radius: 6px;
+    font-weight: 700; letter-spacing: 0.04em;
+  }
+  .xp2-phase--2 .xp2-step__no { background: var(--peri); }
+  .xp2-phase--3 .xp2-step__no { background: oklch(55% 0.15 140); }
+  .xp2-step__name { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin: 0 0 4px; }
+  .xp2-step__desc { font-size: 12.5px; color: var(--ink-soft); margin: 0; line-height: 1.65; }
+  .xp2-cycle__loop {
+    margin: 60px auto 0; max-width: 720px;
+    background: var(--cream); border: 2px dashed var(--coral); border-radius: var(--r-lg);
+    padding: 28px 36px; display: flex; align-items: center; gap: 24px;
+  }
+  .xp2-cycle__loop__icon {
+    width: 56px; height: 56px; border-radius: 50%; background: var(--coral-soft);
+    display: grid; place-items: center; color: var(--coral-deep); flex-shrink: 0;
+    animation: spin 6s linear infinite;
+  }
+  .xp2-cycle__loop__icon svg { width: 28px; height: 28px; }
+  .xp2-cycle__loop__title { font-family: var(--font-display); font-weight: 900; font-size: 18px; line-height: 1.4; margin: 0 0 4px; }
+  .xp2-cycle__loop__desc { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+  @media (max-width: 900px) {
+    .xp2-cycle__flow { grid-template-columns: 1fr; gap: 64px; }
+    .xp2-cycle__flow::before { display: none; }
+  }
+
+  /* ===== Powers — illustrated ===== */
+  .xp2-powers { padding: clamp(80px, 10vw, 130px) 0; }
+  .xp2-powers__head { text-align: center; margin-bottom: 64px; }
+  .xp2-powers__head h2 { margin-top: 18px; }
+  .xp2-powers__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .xp2-power {
+    position: relative; padding: 40px 32px; border-radius: var(--r-lg);
+    background: var(--cream); border: 1px solid var(--line);
+    overflow: hidden; transition: transform .25s, border-color .25s;
+  }
+  .xp2-power:hover { transform: translateY(-6px); border-color: var(--coral); }
+  .xp2-power__no {
+    position: absolute; top: 24px; right: 28px;
+    font-family: var(--font-display); font-weight: 900; font-size: 64px; line-height: 1;
+    color: color-mix(in oklch, var(--coral) 16%, transparent);
+  }
+  .xp2-power:nth-child(2) .xp2-power__no { color: color-mix(in oklch, var(--peri) 16%, transparent); }
+  .xp2-power:nth-child(3) .xp2-power__no { color: color-mix(in oklch, oklch(55% 0.15 140) 18%, transparent); }
+  .xp2-power__icon {
+    width: 72px; height: 72px; border-radius: 18px; background: var(--coral-soft);
+    display: grid; place-items: center; color: var(--coral-deep);
+    margin-bottom: 24px;
+  }
+  .xp2-power:nth-child(2) .xp2-power__icon { background: var(--peri-soft); color: var(--peri-deep); }
+  .xp2-power:nth-child(3) .xp2-power__icon { background: oklch(90% 0.05 140); color: oklch(40% 0.14 140); }
+  .xp2-power__icon svg { width: 36px; height: 36px; }
+  .xp2-power__name { font-family: var(--font-display); font-weight: 900; font-size: 24px; margin: 0 0 14px; line-height: 1.35; }
+  .xp2-power__desc { font-size: 14px; line-height: 1.95; color: var(--ink-soft); margin: 0; }
+  @media (max-width: 900px) { .xp2-powers__grid { grid-template-columns: 1fr; } }
+
+  /* ===== Transforms — before/after ===== */
+  .xp2-trans { padding: clamp(80px, 10vw, 130px) 0; background: var(--cream-2); }
+  .xp2-trans__head { text-align: center; margin-bottom: 56px; }
+  .xp2-trans__head h2 { margin-top: 18px; }
+  .xp2-trans__list { display: grid; gap: 20px; max-width: 1080px; margin: 0 auto; }
+  .xp2-transform {
+    background: var(--cream); border-radius: var(--r-lg);
+    padding: 32px 36px;
+    display: grid; grid-template-columns: 60px 1fr auto 1fr; gap: 28px; align-items: center;
+  }
+  .xp2-transform__icon {
+    width: 60px; height: 60px; border-radius: 18px;
+    background: var(--coral-soft); display: grid; place-items: center;
+    color: var(--coral-deep);
+  }
+  .xp2-transform:nth-child(2) .xp2-transform__icon { background: var(--peri-soft); color: var(--peri-deep); }
+  .xp2-transform:nth-child(3) .xp2-transform__icon { background: oklch(90% 0.05 140); color: oklch(40% 0.14 140); }
+  .xp2-transform__icon svg { width: 28px; height: 28px; }
+  .xp2-transform__before, .xp2-transform__after {
+    font-family: var(--font-display); font-weight: 900; font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 1.5;
+  }
+  .xp2-transform__before { color: var(--ink-mute); }
+  .xp2-transform__after { color: var(--ink); }
+  .xp2-transform__after::before {
+    content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--coral); margin-right: 10px; vertical-align: middle;
+  }
+  .xp2-transform__arrow {
+    width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: var(--cream);
+    display: grid; place-items: center; font-size: 18px;
+  }
+  @media (max-width: 800px) {
+    .xp2-transform { grid-template-columns: 60px 1fr; gap: 16px 18px; padding: 24px; }
+    .xp2-transform__arrow { grid-column: 2; transform: rotate(90deg); width: 32px; height: 32px; margin: 4px 0; }
+    .xp2-transform__before, .xp2-transform__after { grid-column: 2; }
+  }
+
+  /* ===== Why now ===== */
+  .xp2-why {
+    padding: clamp(80px, 10vw, 130px) 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    max-width: var(--max); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x);
+  }
+  .xp2-why__visual { position: relative; aspect-ratio: 1/1; }
+  .xp2-why__age-rings {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at center, transparent 22%, color-mix(in oklch, var(--coral) 35%, transparent) 22.5%, color-mix(in oklch, var(--coral) 35%, transparent) 23.5%, transparent 24%),
+      radial-gradient(circle at center, transparent 32%, color-mix(in oklch, var(--coral) 25%, transparent) 32.5%, color-mix(in oklch, var(--coral) 25%, transparent) 33.5%, transparent 34%),
+      radial-gradient(circle at center, transparent 42%, color-mix(in oklch, var(--coral) 18%, transparent) 42.5%, color-mix(in oklch, var(--coral) 18%, transparent) 43.5%, transparent 44%);
+  }
+  .xp2-why__center {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 38%; aspect-ratio: 1; border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral) 0%, var(--coral-deep) 100%);
+    color: var(--cream);
+    display: grid; place-items: center; text-align: center;
+    font-family: var(--font-display); font-weight: 900;
+    box-shadow: 0 30px 60px -28px color-mix(in oklch, var(--coral) 80%, transparent);
+  }
+  .xp2-why__center__age { font-size: clamp(32px, 4.4vw, 52px); line-height: 1; }
+  .xp2-why__center__lbl { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; margin-top: 6px; opacity: .85; }
+  .xp2-why__pill {
+    position: absolute; background: var(--cream); border: 1.5px solid var(--line);
+    padding: 10px 16px; border-radius: 999px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+    box-shadow: 0 14px 30px -16px rgba(20,20,40,.2);
+    white-space: nowrap;
+  }
+  .xp2-why__pill--1 { top: 6%; left: 12%; }
+  .xp2-why__pill--2 { top: 18%; right: 6%; background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .xp2-why__pill--3 { bottom: 12%; left: 4%; }
+  .xp2-why__pill--4 { bottom: 4%; right: 14%; background: var(--coral); color: var(--cream); border-color: var(--coral); }
+  .xp2-why__pre { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; color: var(--coral-deep); text-transform: uppercase; }
+  .xp2-why__title { font-family: var(--font-display); font-weight: 900; font-size: clamp(34px, 5vw, 60px); line-height: 1.15; margin: 22px 0 28px; }
+  .xp2-why__title em { font-style: normal; color: var(--coral-deep); }
+  .xp2-why__body { font-size: 16px; line-height: 2; color: var(--ink-soft); margin: 0; }
+  .xp2-why__body strong { color: var(--ink); }
+  @media (max-width: 900px) { .xp2-why { grid-template-columns: 1fr; gap: 50px; } .xp2-why__visual { max-width: 480px; margin: 0 auto; width: 100%; } }
+
+  /* ===== Menu (4 genres) ===== */
+  .xp2-menu { padding: clamp(80px, 10vw, 130px) 0; background: var(--cream-2); }
+  .xp2-menu__head { text-align: center; margin-bottom: 56px; }
+  .xp2-menu__head h2 { margin-top: 18px; }
+  .xp2-menu__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .xp2-card {
+    background: var(--cream); border-radius: var(--r-lg);
+    overflow: hidden; display: grid; grid-template-columns: 0.85fr 1.15fr;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .xp2-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -24px rgba(20,20,40,.2); }
+  .xp2-card__visual {
+    position: relative; min-height: 240px;
+    background: var(--cream-2); display: grid; place-items: center;
+    overflow: hidden;
+  }
+  .xp2-card--art .xp2-card__visual {
+    background:
+      radial-gradient(circle at 30% 30%, color-mix(in oklch, oklch(70% 0.18 25) 60%, transparent) 0%, transparent 55%),
+      radial-gradient(circle at 70% 70%, color-mix(in oklch, oklch(70% 0.18 280) 50%, transparent) 0%, transparent 55%),
+      var(--cream-2);
+  }
+  .xp2-card--video .xp2-card__visual {
+    background:
+      radial-gradient(circle at 50% 40%, color-mix(in oklch, var(--ink) 30%, transparent) 0%, transparent 65%),
+      radial-gradient(circle at 80% 80%, color-mix(in oklch, var(--coral) 35%, transparent) 0%, transparent 50%),
+      var(--cream-2);
+  }
+  .xp2-card--music .xp2-card__visual {
+    background:
+      radial-gradient(circle at 30% 50%, color-mix(in oklch, oklch(65% 0.18 320) 55%, transparent) 0%, transparent 55%),
+      radial-gradient(circle at 75% 30%, color-mix(in oklch, oklch(70% 0.16 160) 40%, transparent) 0%, transparent 50%),
+      var(--cream-2);
+  }
+  .xp2-card--game .xp2-card__visual {
+    background:
+      radial-gradient(circle at 50% 50%, color-mix(in oklch, oklch(70% 0.18 140) 55%, transparent) 0%, transparent 55%),
+      radial-gradient(circle at 80% 20%, color-mix(in oklch, var(--coral) 45%, transparent) 0%, transparent 50%),
+      var(--cream-2);
+  }
+  .xp2-card__emoji {
+    position: relative; z-index: 2; font-size: 80px; line-height: 1;
+    background: var(--cream); width: 120px; height: 120px; border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: 0 18px 40px -20px rgba(20,20,40,.3);
+  }
+  .xp2-card__visual::after { content: none !important; display: none !important; background: none !important; }
+  .xp2-card__tag {
+    position: absolute; z-index: 2; top: 16px; left: 16px;
+    font-family: var(--font-mono); font-size: 10px;
+    background: color-mix(in oklch, var(--ink) 88%, transparent); color: var(--cream);
+    padding: 5px 10px; border-radius: 999px; letter-spacing: 0.06em;
+  }
+  .xp2-card__body { padding: 32px 32px 32px 28px; display: flex; flex-direction: column; gap: 14px; }
+  .xp2-card__name { font-family: var(--font-display); font-weight: 900; font-size: 22px; margin: 0; line-height: 1.3; }
+  .xp2-card__copy { font-size: 14px; line-height: 1.85; color: var(--ink-soft); margin: 0; }
+  .xp2-card__point {
+    margin-top: auto; padding: 14px 16px; background: var(--cream-2); border-radius: var(--r-md);
+    border-left: 3px solid var(--coral);
+  }
+  .xp2-card__point__lbl {
+    display: inline-block; font-family: var(--font-mono); font-size: 10px;
+    color: var(--coral-deep); letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .xp2-card__point__text { font-family: var(--font-display); font-weight: 700; font-size: 13.5px; line-height: 1.55; margin: 4px 0 0; }
+  @media (max-width: 900px) { .xp2-menu__grid { grid-template-columns: 1fr; } .xp2-card { grid-template-columns: 1fr; } .xp2-card__visual { min-height: 180px; } }
+
+  /* ===== Trial about ===== */
+  .xp2-trial {
+    padding: clamp(80px, 10vw, 130px) 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    max-width: var(--max); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x);
+  }
+  .xp2-trial__visual { position: relative; aspect-ratio: 5/6; }
+  .xp2-trial__photo {
+    position: absolute; inset: 0; border-radius: var(--r-xl); overflow: hidden;
+    background: url('images/generated/xp-trial-ai.jpg') center/cover no-repeat, var(--cream-2);
+    box-shadow: 0 32px 60px -28px rgba(20,20,40,.3);
+  }
+  .xp2-trial__badge {
+    position: absolute; top: -24px; right: -24px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--coral); color: var(--cream);
+    display: grid; place-items: center; text-align: center;
+    box-shadow: 0 24px 50px -18px color-mix(in oklch, var(--coral) 70%, transparent);
+    transform: rotate(-8deg);
+    z-index: 3;
+  }
+  .xp2-trial__badge__big { font-family: var(--font-display); font-weight: 900; font-size: 32px; line-height: 1; }
+  .xp2-trial__badge__small { font-size: 11px; font-weight: 700; margin-top: 6px; letter-spacing: 0.04em; }
+  .xp2-trial__stats { position: absolute; left: -20px; bottom: 40px; background: var(--cream); padding: 18px 22px; border-radius: 16px; box-shadow: 0 18px 40px -20px rgba(20,20,40,.25); display: grid; gap: 4px; z-index: 3; }
+  .xp2-trial__stats__big { font-family: var(--font-display); font-weight: 900; font-size: 28px; line-height: 1; }
+  .xp2-trial__stats__lbl { font-family: var(--font-mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
+  .xp2-trial__copy h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.2; margin: 18px 0 28px; }
+  .xp2-trial__copy p { font-size: 15.5px; line-height: 2; color: var(--ink-soft); margin: 0 0 16px; }
+  .xp2-trial__copy strong { color: var(--ink); }
+  .xp2-trial__details {
+    margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  .xp2-trial__detail {
+    padding: 18px 20px; background: var(--cream-2); border-radius: var(--r-md);
+  }
+  .xp2-trial__detail__lbl { font-family: var(--font-mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.1em; text-transform: uppercase; }
+  .xp2-trial__detail__val { font-family: var(--font-display); font-weight: 900; font-size: 20px; line-height: 1.3; margin-top: 6px; }
+  .xp2-trial__detail--bonus { background: var(--coral); color: var(--cream); }
+  .xp2-trial__detail--bonus .xp2-trial__detail__lbl { color: color-mix(in oklch, var(--cream) 70%, transparent); }
+  @media (max-width: 900px) { .xp2-trial { grid-template-columns: 1fr; gap: 60px; } .xp2-trial__visual { max-width: 460px; margin: 0 auto; width: 100%; } }
+
+  /* ===== Final CTA ===== */
+  .xp2-final {
+    margin: 0 var(--pad-x) clamp(80px, 10vw, 120px);
+    background: linear-gradient(135deg, var(--ink) 0%, color-mix(in oklch, var(--ink) 80%, var(--peri-deep)) 100%);
+    color: var(--cream); border-radius: var(--r-xl);
+    padding: clamp(64px, 8vw, 100px) clamp(40px, 6vw, 80px);
+    position: relative; overflow: hidden;
+  }
+  .xp2-final::before {
+    content: ""; position: absolute; top: -160px; right: -120px; width: 460px; height: 460px;
+    border-radius: 50%; background: radial-gradient(circle, var(--coral) 0%, transparent 70%); opacity: .55;
+  }
+  .xp2-final::after {
+    content: ""; position: absolute; bottom: -120px; left: -100px; width: 360px; height: 360px;
+    border-radius: 50%; background: radial-gradient(circle, var(--peri) 0%, transparent 70%); opacity: .4;
+  }
+  .xp2-final__inner { position: relative; z-index: 1; max-width: 800px; }
+  .xp2-final__pre { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; color: var(--coral); text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
+  .xp2-final__pre::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+  .xp2-final h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(36px, 5.4vw, 64px); line-height: 1.15; margin: 22px 0 24px; }
+  .xp2-final p { color: color-mix(in oklch, var(--cream) 80%, transparent); font-size: 16px; line-height: 1.95; margin: 0 0 36px; max-width: 560px; }
+  .xp2-final__buttons { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .xp2-final__note { margin-top: 28px; padding-top: 24px; border-top: 1px solid color-mix(in oklch, var(--cream) 18%, transparent); font-family: var(--font-mono); font-size: 12px; color: color-mix(in oklch, var(--cream) 70%, transparent); letter-spacing: 0.04em; display: flex; gap: 24px; flex-wrap: wrap; }
+  .xp2-final__note span { display: flex; align-items: center; gap: 8px; }
+  .xp2-final__note span::before { content: "✓"; color: var(--coral); font-weight: 900; }
+
+  /* ===== Reference-style light dashboard redesign ===== */
+  :root {
+    --xp-blue: #0d65c8;
+    --xp-blue-2: #52bff6;
+    --xp-sky: #eef9ff;
+    --xp-card: rgba(255,255,255,.94);
+    --xp-line: rgba(33,124,218,.14);
+    --xp-orange: #ff7a28;
+    --xp-green: #20c768;
+  }
+  body {
+    background:
+      radial-gradient(circle at 3% 15%, rgba(82,191,246,.18), transparent 26%),
+      radial-gradient(circle at 96% 45%, rgba(174,224,255,.3), transparent 24%),
+      linear-gradient(180deg, #f6fcff 0%, #fff 42%, #f4fbff 100%);
+  }
+  .xp2-hero {
+    padding: clamp(56px, 7vw, 92px) 0 28px;
+    background:
+      radial-gradient(circle at 86% 30%, rgba(82,191,246,.22), transparent 28%),
+      linear-gradient(105deg, #f4fbff 0%, #fff 42%, #e9f8ff 100%);
+  }
+  .xp2-hero::before,
+  .xp2-hero::after { display: none; }
+  .xp2-hero__inner {
+    grid-template-columns: minmax(480px, .98fr) minmax(520px, 1.02fr);
+    gap: clamp(24px, 5vw, 70px);
+    align-items: center;
+  }
+  .xp2-hero__kicker {
+    color: var(--xp-blue);
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .xp2-hero__kicker::before { display: none; }
+  .xp2-hero__title {
+    color: #10172d;
+    font-size: clamp(44px, 4.7vw, 64px);
+    line-height: 1.22;
+    letter-spacing: 0;
+  }
+  .xp2-hero__title em {
+    color: inherit;
+    background: none;
+  }
+  .xp2-hero__title em::after { display: none; }
+  .xp2-hero__sub {
+    color: #24324b;
+    font-size: clamp(16px, 1.5vw, 21px);
+  }
+  .xp2-collage { aspect-ratio: 1.62 / 1; min-height: 390px; }
+  .xp2-collage__main {
+    inset: 0;
+    border-radius: 0 0 0 120px;
+    background: url('images/generated/experience-hero-reference.png') center/cover no-repeat, #eaf8ff;
+    box-shadow: none;
+  }
+  .xp2-collage__main::after {
+    content: "";
+    position: absolute;
+    left: 39%;
+    top: 27%;
+    width: 18%;
+    height: 28%;
+    border-radius: 50%;
+    background:
+      radial-gradient(ellipse at center,
+        rgba(244, 251, 255, .96) 0%,
+        rgba(244, 251, 255, .82) 42%,
+        rgba(244, 251, 255, 0) 76%);
+    filter: blur(5px);
+    pointer-events: none;
+  }
+  .xp2-collage__sub,
+  .xp2-collage__deco { display: none; }
+  .xp2-collage__chip {
+    border: 1px solid var(--xp-line);
+    border-radius: 999px;
+    background: rgba(255,255,255,.9);
+    color: #16233c;
+    font-family: var(--font-display);
+    font-weight: 900;
+    box-shadow: 0 16px 34px -26px rgba(13,101,200,.45);
+  }
+  .xp2-collage__chip--1 { top: 12%; left: 2%; }
+  .xp2-collage__chip--2 { top: 20%; right: 2%; background: rgba(255,255,255,.94); color: #16233c; }
+  .xp2-collage__chip--3 { bottom: 12%; right: 6%; left: auto; }
+  .hero__cta .btn--primary,
+  .xp2-final .btn--primary {
+    background: linear-gradient(135deg, #ff8a35, #ff6a22);
+    color: #fff;
+    box-shadow: 0 16px 30px -18px rgba(255,106,34,.72);
+  }
+  .line-add {
+    min-height: 48px;
+    padding: 0 22px;
+    border: 1.5px solid var(--xp-green);
+    border-radius: 999px;
+    background: #fff;
+  }
+  .line-add::before {
+    content: "LINE友だち追加";
+    color: var(--xp-green);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 14px;
+  }
+  .line-add img { display: none; }
+  .xp2-strip { display: none; }
+
+  .xp2-worry,
+  .xp2-philo,
+  .xp2-cycle,
+  .xp2-powers,
+  .xp2-trans,
+  .xp2-menu {
+    padding: 10px var(--pad-x);
+    background: transparent;
+    color: #10172d;
+  }
+  .xp2-worry__inner,
+  .xp2-philo__inner,
+  .xp2-cycle > .wrap,
+  .xp2-powers > .wrap,
+  .xp2-trans > .wrap,
+  .xp2-menu > .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(24px, 3vw, 34px);
+    border: 1px solid var(--xp-line);
+    border-radius: 22px;
+    background: var(--xp-card);
+    box-shadow: 0 22px 62px -50px rgba(13,101,200,.5);
+  }
+  .xp2-worry__inner {
+    grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr);
+    gap: 28px;
+  }
+  .xp2-worry__visual {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+  .xp2-worry__big-q { display: none; }
+  .bubble {
+    position: static;
+    transform: none !important;
+    max-width: none;
+    box-shadow: 0 14px 34px -28px rgba(13,101,200,.4);
+    border: 1px solid rgba(32, 112, 206, .14);
+    padding: 18px 20px 18px 22px;
+    background: linear-gradient(135deg, #ffffff 0%, #f6fbff 100%);
+    color: #10172d;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 12px;
+    width: 100%;
+    align-items: start;
+    inset: auto !important;
+  }
+  .bubble--1,
+  .bubble--2,
+  .bubble--3 {
+    inset: auto !important;
+  }
+  .bubble::before {
+    content: "";
+    position: absolute;
+    inset: 16px auto 16px 0;
+    width: 4px;
+    border-radius: 0 999px 999px 0;
+    background: var(--xp-blue);
+  }
+  .bubble::after { display: none; }
+  .bubble__tag {
+    background: transparent;
+    color: var(--xp-blue);
+    padding: 0;
+    font-size: clamp(15px, 1.45vw, 18px);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    margin: 1px 0 0;
+    white-space: nowrap;
+  }
+  .bubble__text {
+    display: block;
+    min-width: 0;
+    line-height: 1.75;
+  }
+  .xp2-worry__copy h2 {
+    font-size: clamp(24px, 2.6vw, 34px);
+    margin: 8px 0 16px;
+  }
+  .xp2-worry__answer {
+    margin-top: 0;
+    background: linear-gradient(135deg, #eef9ff, #fff);
+    color: #183154;
+    border: 1px solid var(--xp-line);
+  }
+  .xp2-worry__answer::before { color: var(--xp-blue); }
+  .xp2-worry__answer strong { color: var(--xp-blue); }
+
+  .xp2-philo::before { display: none; }
+  .xp2-philo__big {
+    color: #10172d;
+    font-size: clamp(30px, 3.8vw, 52px);
+  }
+  .xp2-philo__big em.x { color: #10172d; }
+  .xp2-philo__big em.x::after { display: none; }
+  .xp2-philo__big em.o { color: var(--xp-blue); }
+  .xp2-philo__compare {
+    margin-top: 28px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .xp2-philo__arrow { display: none; }
+  .xp2-philo__card {
+    background: #f6fbff;
+    color: #10172d;
+    border-color: var(--xp-line);
+  }
+  .xp2-philo__card--good {
+    background: linear-gradient(135deg, #e9f8ff, #fff);
+    color: #10172d;
+  }
+
+  .xp2-cycle__head,
+  .xp2-powers__head,
+  .xp2-trans__head,
+  .xp2-menu__head {
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  .xp2-cycle__flow {
+    max-width: none;
+    gap: 14px;
+  }
+  .xp2-cycle__flow::before { display: none; }
+  .xp2-phase {
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f7fcff, #fff);
+    border-color: var(--xp-line);
+    padding: 22px;
+  }
+  .xp2-phase__num {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto;
+    font-size: 20px;
+    background: var(--xp-blue);
+  }
+  .xp2-phase__title { font-size: 22px; color: var(--xp-blue); }
+  .xp2-step {
+    background: #fff;
+    border: 1px solid var(--xp-line);
+  }
+  .xp2-cycle__loop {
+    margin-top: 22px;
+    max-width: none;
+    border-color: rgba(13,101,200,.24);
+    background: #f6fbff;
+  }
+
+  .xp2-powers__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .xp2-power {
+    border-color: var(--xp-line);
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f8fdff, #fff);
+    padding: 28px 24px;
+  }
+  .xp2-power__icon {
+    background: #e8f7ff;
+    color: var(--xp-blue);
+  }
+  .xp2-power__name { color: var(--xp-blue); }
+
+  .xp2-trans__list {
+    grid-template-columns: 1fr;
+    display: grid;
+    gap: 16px;
+    max-width: 860px;
+  }
+  .xp2-transform {
+    grid-template-columns: 64px minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 18px;
+    padding: 22px 26px;
+    border: 1px solid var(--xp-line);
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fff 0%, #f7fcff 100%);
+    box-shadow: 0 18px 46px -38px rgba(13,101,200,.42);
+    align-items: center;
+  }
+  .xp2-transform__arrow {
+    width: 34px;
+    height: 34px;
+    background: var(--xp-blue);
+    transform: none;
+  }
+  .xp2-transform__before,
+  .xp2-transform__after {
+    min-width: 0;
+    font-size: clamp(17px, 1.7vw, 22px);
+  }
+  .xp2-transform__before {
+    justify-self: end;
+    text-align: right;
+  }
+  .xp2-transform__after {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .xp2-why {
+    max-width: var(--max);
+    margin: 10px auto;
+    padding: clamp(24px, 3vw, 34px);
+    grid-template-columns: .8fr 1.2fr;
+    gap: 28px;
+    border: 1px solid var(--xp-line);
+    border-radius: 22px;
+    background: var(--xp-card);
+    box-shadow: 0 22px 62px -50px rgba(13,101,200,.5);
+  }
+  .xp2-why__center { background: linear-gradient(135deg, var(--xp-blue), var(--xp-blue-2)); }
+  .xp2-why__pre,
+  .xp2-why__title em { color: var(--xp-blue); }
+
+  .xp2-menu__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .xp2-card {
+    display: block;
+    border: 1px solid var(--xp-line);
+    border-radius: 18px;
+    background: #fff;
+  }
+  .xp2-card__visual {
+    min-height: 150px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  .xp2-card--art .xp2-card__visual {
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.02), rgba(13,101,200,.16)),
+      url('images/generated/experience-menu-art.png') !important;
+  }
+  .xp2-card--video .xp2-card__visual {
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.02), rgba(13,101,200,.16)),
+      url('images/generated/experience-menu-video.png') !important;
+  }
+  .xp2-card--music .xp2-card__visual {
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.02), rgba(13,101,200,.16)),
+      url('images/generated/experience-menu-music.png') !important;
+  }
+  .xp2-card--game .xp2-card__visual {
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.02), rgba(13,101,200,.16)),
+      url('images/generated/experience-menu-game.png') !important;
+  }
+  .xp2-card__emoji {
+    display: none;
+  }
+  .xp2-card__body {
+    padding: 20px;
+  }
+  .xp2-card__name {
+    color: var(--xp-blue);
+    font-size: 19px;
+  }
+  .xp2-card__copy {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .xp2-card__point {
+    background: #f6fbff;
+    border-color: var(--xp-blue);
+  }
+
+  .xp2-trial {
+    max-width: var(--max);
+    margin: 10px auto;
+    padding: clamp(24px, 3vw, 34px);
+    grid-template-columns: .75fr 1.25fr;
+    gap: 30px;
+    border: 1px solid var(--xp-line);
+    border-radius: 22px;
+    background: var(--xp-card);
+    box-shadow: 0 22px 62px -50px rgba(13,101,200,.5);
+  }
+  .xp2-trial__photo {
+    background: url('images/generated/experience-card-reference.png') center/cover no-repeat, #eef9ff;
+    box-shadow: none;
+  }
+  .xp2-trial__badge {
+    background: var(--xp-blue);
+  }
+  .xp2-trial__stats {
+    background: #fff;
+    border: 1px solid var(--xp-line);
+  }
+
+  .xp2-final {
+    margin: 10px var(--pad-x) clamp(40px, 6vw, 76px);
+    background:
+      linear-gradient(100deg, #e4f8ff 0%, #fff 52%, #d9f4ff 100%);
+    color: #10172d;
+    border: 1px solid var(--xp-line);
+  }
+  .xp2-final::before,
+  .xp2-final::after { opacity: .18; }
+  .xp2-final__pre,
+  .xp2-final h2 {
+    color: var(--xp-blue);
+  }
+  .xp2-final p,
+  .xp2-final__note {
+    color: #314562;
+  }
+  .xp2-final__note {
+    border-top-color: var(--xp-line);
+  }
+  @media (max-width: 1100px) {
+    .xp2-menu__grid { grid-template-columns: repeat(2, 1fr); }
+    .xp2-worry__inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .xp2-hero__inner,
+    .xp2-why,
+    .xp2-trial { grid-template-columns: 1fr; }
+    .xp2-collage { min-height: 300px; }
+    .xp2-philo__compare,
+    .xp2-cycle__flow,
+    .xp2-powers__grid,
+    .xp2-trans__list { grid-template-columns: 1fr; }
+    .xp2-transform {
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 12px 16px;
+      align-items: start;
+    }
+    .xp2-transform__icon {
+      grid-row: 1 / 4;
+    }
+    .xp2-transform__before,
+    .xp2-transform__after {
+      justify-self: stretch;
+      text-align: left;
+    }
+    .xp2-transform__arrow {
+      width: 28px;
+      height: 28px;
+      transform: rotate(90deg);
+    }
+  }
+  @media (max-width: 620px) {
+    .xp2-menu__grid { grid-template-columns: 1fr; }
+  }
+</style>
+<link rel="stylesheet" href="nav.css?v=mobile-linebreak-20260606" />
+<style>
+  .xp2-card__emoji {
+    display: none !important;
+  }
+  .xp2-card__visual::before,
+  .xp2-card__visual::after {
+    content: none !important;
+    display: none !important;
+  }
+  @media (max-width: 760px) {
+    .xp2-hero__title,
+    .xp2-hero__sub {
+      max-width: 100%;
+      white-space: normal !important;
+      word-break: auto-phrase;
+      overflow-wrap: anywhere;
+    }
+    .xp2-hero__sub br {
+      display: none;
+    }
+    .line-add img {
+      display: none !important;
+    }
+    .line-add::before {
+      content: "LINEで相談する";
+      color: #18a84c;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .xp2-trans__list {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    .xp2-transform {
+      grid-template-columns: 56px minmax(0, 1fr) !important;
+      gap: 10px 16px !important;
+      align-items: start !important;
+      padding: 20px 18px !important;
+    }
+    .xp2-transform__icon {
+      grid-column: 1 !important;
+      grid-row: 1 / 4 !important;
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 16px !important;
+    }
+    .xp2-transform__before,
+    .xp2-transform__after {
+      grid-column: 2 !important;
+      justify-self: stretch !important;
+      text-align: left !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-wrap: normal !important;
+      line-break: strict !important;
+    }
+    .xp2-transform__arrow {
+      grid-column: 2 !important;
+      width: 28px !important;
+      height: 28px !important;
+      transform: rotate(90deg) !important;
+      margin: 2px 0 !important;
+    }
+  }
+  @media (max-width: 900px) {
+    .xp2-hero__title,
+    .xp2-hero__sub {
+      max-width: 100%;
+      white-space: normal !important;
+      word-break: auto-phrase;
+      overflow-wrap: anywhere;
+    }
+    .xp2-hero__sub br {
+      display: none;
+    }
+    .line-add img {
+      display: none !important;
+    }
+    .line-add::before {
+      content: "LINEで相談する";
+      color: #18a84c;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    /* 心配セクションの回答カード（スマホ）：装飾「A.」を非表示＋手動改行を解除し、禁則を効かせて自然に折り返す */
+    .xp2-worry__answer::before { display: none; }
+    .xp2-worry__answer { word-break: normal; overflow-wrap: normal; line-break: strict; }
+    .xp2-worry__answer br { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html"><img class="brand__logo" src="images/logo.svg" alt="SIGNON" /></a>
+    <div class="nav__links">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">SIGNONとは</a>
+      <a href="school.html">スクールについて</a>
+      <a href="experience.html" class="is-current">体験について</a>
+      <a href="https://lin.ee/rTMgnyl" class="nav__cta">体験申込 →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="xp2-hero" data-screen-label="05 Experience Hero">
+  <div class="wrap xp2-hero__inner">
+    <div>
+      <span class="xp2-hero__kicker">Studio for Thinking</span>
+      <h1 class="xp2-hero__title">AIと考える力を、<br/>育てる時間。</h1>
+      <p class="xp2-hero__sub">答えではなく、問いを。<br/>完成品ではなく、思考のプロセスを。</p>
+      <div class="hero__cta">
+        <a href="https://lin.ee/rTMgnyl" class="btn btn--primary">体験を申し込む <span class="arrow">→</span></a>
+        <a href="https://lin.ee/9FFK1Oe" class="line-add" target="_blank" rel="noopener" aria-label="LINEで友だち追加"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" /></a>
+      </div>
+    </div>
+
+    <div class="xp2-collage reveal">
+      <div class="xp2-collage__main">
+      </div>
+      <div class="xp2-collage__sub"></div>
+
+      <div class="xp2-collage__chip xp2-collage__chip--1">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="oklch(68% 0.16 45)"/></svg>
+        AIと対話中
+      </div>
+      <div class="xp2-collage__chip xp2-collage__chip--2">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z" fill="oklch(68% 0.16 45)"/></svg>
+        考える力 +
+      </div>
+      <div class="xp2-collage__chip xp2-collage__chip--3">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="oklch(60% 0.16 250)"/></svg>
+        作品完成！
+      </div>
+
+      <svg class="xp2-collage__deco xp2-collage__deco--star" width="56" height="56" viewBox="0 0 56 56" aria-hidden="true">
+        <path d="M28 2l6 16 16 6-16 6-6 16-6-16-16-6 16-6z" fill="oklch(68% 0.16 45)" opacity="0.85"/>
+      </svg>
+      <svg class="xp2-collage__deco xp2-collage__deco--dots" width="80" height="40" viewBox="0 0 80 40" aria-hidden="true">
+        <circle cx="8" cy="8" r="4" fill="oklch(60% 0.16 250)"/>
+        <circle cx="24" cy="20" r="4" fill="oklch(60% 0.16 250)" opacity=".7"/>
+        <circle cx="40" cy="12" r="4" fill="oklch(60% 0.16 250)" opacity=".5"/>
+        <circle cx="56" cy="24" r="4" fill="oklch(60% 0.16 250)" opacity=".35"/>
+        <circle cx="72" cy="16" r="4" fill="oklch(60% 0.16 250)" opacity=".2"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ Marquee strip ============ -->
+<div class="xp2-strip" aria-hidden="true">
+  <div class="xp2-strip__track">
+    <span class="xp2-strip__item">問いを立てる</span>
+    <span class="xp2-strip__item">考え抜く</span>
+    <span class="xp2-strip__item">AIと対話する</span>
+    <span class="xp2-strip__item">試行錯誤する</span>
+    <span class="xp2-strip__item">自分の答えを出す</span>
+    <span class="xp2-strip__item">問いを立てる</span>
+    <span class="xp2-strip__item">考え抜く</span>
+    <span class="xp2-strip__item">AIと対話する</span>
+    <span class="xp2-strip__item">試行錯誤する</span>
+    <span class="xp2-strip__item">自分の答えを出す</span>
+  </div>
+</div>
+
+<!-- ============ Worry (parents) ============ -->
+<section class="xp2-worry">
+  <div class="wrap xp2-worry__inner">
+    <div class="xp2-worry__visual reveal">
+      <div class="xp2-worry__big-q">？</div>
+      <div class="bubble bubble--1">
+        <span class="bubble__tag">心配 01</span>
+        <span class="bubble__text">AIに答えを聞くだけで、自分で考えなくなるのでは？</span>
+      </div>
+      <div class="bubble bubble--2">
+        <span class="bubble__tag">心配 02</span>
+        <span class="bubble__text">うちの子は、自分の意見を言うのが苦手で…</span>
+      </div>
+      <div class="bubble bubble--3">
+        <span class="bubble__tag">心配 03</span>
+        <span class="bubble__text">AI任せで、本当に"力"がつくの？</span>
+      </div>
+    </div>
+
+    <div class="xp2-worry__copy reveal">
+      <span class="eyebrow" style="color: var(--coral-deep);">For parents</span>
+      <h2>こんな<em>不安</em>は<br/>ありませんか？</h2>
+      <p>多くの保護者さまから、AIを使った学びに対するご不安の声をいただきます。<br/>その気持ち、よくわかります。</p>
+      <div class="xp2-worry__answer">
+        <strong>SIGNONは、その逆を行きます。</strong><br/>
+        AIに頼るのではなく、AIを"問いの相手"にして、<br/>自分の頭で考え抜く力を育てます。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Philosophy ============ -->
+<section class="xp2-philo">
+  <div class="wrap xp2-philo__inner">
+    <span class="xp2-philo__eyebrow">Our philosophy</span>
+    <h2 class="xp2-philo__big">AIを<em class="x">使える</em>ことより、<br/>AIと<em class="o">一緒に考える</em>力を。</h2>
+    <div class="xp2-philo__compare">
+      <div class="xp2-philo__card xp2-philo__card--bad">
+        <div class="xp2-philo__card__label">— よくある AI 学習</div>
+        <h3>AIに"答え"を出してもらう</h3>
+        <p>プロンプトを覚えて、結果を受け取るだけ。<br/>"AIを使えるようになる" がゴール。</p>
+      </div>
+      <div class="xp2-philo__arrow">→</div>
+      <div class="xp2-philo__card xp2-philo__card--good">
+        <div class="xp2-philo__card__label">— SIGNON の学び</div>
+        <h3>AIと"対話"してアイデアを磨く</h3>
+        <p>AIの答えに「なぜ？」を返し、<br/>何度も問い直しながら、自分の答えを育てる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Cycle ============ -->
+<section class="xp2-cycle">
+  <div class="wrap">
+    <div class="xp2-cycle__head reveal">
+      <span class="eyebrow">Trial flow</span>
+      <h2 class="h-section">体験会で行うこと<br/>— 好きを見つけ、AIと試し、作品にする</h2>
+      <p class="lead" style="margin: 22px auto 0; max-width: 560px;">AIに任せきりにするのではなく、<br>子ども自身が考え、選び、形にする流れを体験します。</p>
+    </div>
+
+    <div class="xp2-cycle__flow">
+      <article class="xp2-phase xp2-phase--1 reveal">
+        <div class="xp2-phase__num">1</div>
+        <div style="text-align: center;">
+          <span class="xp2-phase__tag">Think</span>
+        </div>
+        <h3 class="xp2-phase__title">考えを出す</h3>
+        <p class="xp2-phase__sub">まずは自分の「好き」や作りたいものを言葉にする</p>
+        <div class="xp2-phase__steps">
+          <div class="xp2-step"><span class="xp2-step__no">01</span><div><div class="xp2-step__name">好きなテーマを選ぶ</div><p class="xp2-step__desc">絵・動画・音楽・ゲームなど、興味のある題材を決めます。</p></div></div>
+          <div class="xp2-step"><span class="xp2-step__no">02</span><div><div class="xp2-step__name">AIに伝えてみる</div><p class="xp2-step__desc">どんな作品にしたいかを、先生と一緒に言葉にします。</p></div></div>
+        </div>
+      </article>
+
+      <article class="xp2-phase xp2-phase--2 reveal">
+        <div class="xp2-phase__num">2</div>
+        <div style="text-align: center;">
+          <span class="xp2-phase__tag">Try</span>
+        </div>
+        <h3 class="xp2-phase__title">AIと試す</h3>
+        <p class="xp2-phase__sub">AIの反応を見ながら、もっとよくする方法を考える</p>
+        <div class="xp2-phase__steps">
+          <div class="xp2-step"><span class="xp2-step__no">03</span><div><div class="xp2-step__name">出てきたものを見る</div><p class="xp2-step__desc">AIの結果を見て、「いいところ」「直したいところ」を見つけます。</p></div></div>
+          <div class="xp2-step"><span class="xp2-step__no">04</span><div><div class="xp2-step__name">もう一度お願いする</div><p class="xp2-step__desc">「もっと明るく」「別の雰囲気で」など、改善の指示を出します。</p></div></div>
+        </div>
+      </article>
+
+      <article class="xp2-phase xp2-phase--3 reveal">
+        <div class="xp2-phase__num">3</div>
+        <div style="text-align: center;">
+          <span class="xp2-phase__tag">Create</span>
+        </div>
+        <h3 class="xp2-phase__title">作品にする</h3>
+        <p class="xp2-phase__sub">最後は自分で選び、体験の成果として完成させる</p>
+        <div class="xp2-phase__steps">
+          <div class="xp2-step"><span class="xp2-step__no">05</span><div><div class="xp2-step__name">気に入った案を選ぶ</div><p class="xp2-step__desc">複数の案から、自分がいちばん良いと思うものを選びます。</p></div></div>
+          <div class="xp2-step"><span class="xp2-step__no">06</span><div><div class="xp2-step__name">完成形にまとめる</div><p class="xp2-step__desc">作品として見せられる形に整え、体験の成果にします。</p></div></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="xp2-cycle__loop reveal">
+      <div class="xp2-cycle__loop__icon">
+        <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-refresh"></use></svg>
+      </div>
+      <div>
+        <h4 class="xp2-cycle__loop__title">大切なのは、AIの答えをそのまま使わないこと。</h4>
+        <p class="xp2-cycle__loop__desc">考える、試す、選ぶ。この流れを経験することで、AIを使いながらも自分の頭で判断する力を育てます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Powers ============ -->
+<section class="xp2-powers">
+  <div class="wrap">
+    <div class="xp2-powers__head reveal">
+      <span class="eyebrow">3 powers</span>
+      <h2 class="h-section">SIGNONの体験で<br/>育つ3つの力</h2>
+    </div>
+    <div class="xp2-powers__grid">
+      <article class="xp2-power reveal">
+        <span class="xp2-power__no">01</span>
+        <div class="xp2-power__icon">
+          <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-thinking"></use></svg>
+        </div>
+        <h3 class="xp2-power__name">考える力</h3>
+        <p class="xp2-power__desc">AIの応えを鵜呑みにせず、「なぜ？」「本当に？」と問い直す習慣。情報を批判的に受け取り、自分の頭で結論を出す力が育ちます。</p>
+      </article>
+      <article class="xp2-power reveal">
+        <span class="xp2-power__no">02</span>
+        <div class="xp2-power__icon">
+          <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-create"></use></svg>
+        </div>
+        <h3 class="xp2-power__name">想像力・創造力</h3>
+        <p class="xp2-power__desc">AIとの対話で広がる可能性の中から、自分なりの"組み合わせ"を見つける。0から1ではなく、AIと一緒に1を100にする創造性を磨きます。</p>
+      </article>
+      <article class="xp2-power reveal">
+        <span class="xp2-power__no">03</span>
+        <div class="xp2-power__icon">
+          <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-refresh"></use></svg>
+        </div>
+        <h3 class="xp2-power__name">試行錯誤する力</h3>
+        <p class="xp2-power__desc">うまくいかなくても諦めない。プロンプトを変え、視点を変え、何度でもトライする。失敗を"次のヒント"に変える粘り強さが身につきます。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Transforms ============ -->
+<section class="xp2-trans">
+  <div class="wrap">
+    <div class="xp2-trans__head reveal">
+      <span class="eyebrow">Transformation</span>
+      <h2 class="h-section">体験で起こる、<br/>3つの変化</h2>
+    </div>
+    <div class="xp2-trans__list">
+      <article class="xp2-transform reveal">
+        <div class="xp2-transform__icon">
+          <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-question"></use></svg>
+        </div>
+        <div class="xp2-transform__before">「わからない」</div>
+        <div class="xp2-transform__arrow">→</div>
+        <div class="xp2-transform__after">「もっと知りたい！」</div>
+      </article>
+      <article class="xp2-transform reveal">
+        <div class="xp2-transform__icon">
+          <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-target"></use></svg>
+        </div>
+        <div class="xp2-transform__before">「正解を教えて」</div>
+        <div class="xp2-transform__arrow">→</div>
+        <div class="xp2-transform__after">「自分の答えを出したい」</div>
+      </article>
+      <article class="xp2-transform reveal">
+        <div class="xp2-transform__icon">
+          <svg class="sig-icon" aria-hidden="true"><use href="images/icons.svg#icon-refresh"></use></svg>
+        </div>
+        <div class="xp2-transform__before">「できない…」</div>
+        <div class="xp2-transform__arrow">→</div>
+        <div class="xp2-transform__after">「もう一回やってみる！」</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Why now ============ -->
+<section class="xp2-why">
+  <div class="xp2-why__visual reveal">
+    <div class="xp2-why__age-rings"></div>
+    <div class="xp2-why__center">
+      <div>
+        <div class="xp2-why__center__age">6–12</div>
+        <div class="xp2-why__center__lbl">YEARS OLD</div>
+      </div>
+    </div>
+    <div class="xp2-why__pill xp2-why__pill--1">脳がやわらかい</div>
+    <div class="xp2-why__pill xp2-why__pill--2">好奇心 MAX</div>
+    <div class="xp2-why__pill xp2-why__pill--3">感性が豊か</div>
+    <div class="xp2-why__pill xp2-why__pill--4">習慣が身につく</div>
+  </div>
+  <div class="reveal">
+    <span class="xp2-why__pre">Why now?</span>
+    <h2 class="xp2-why__title">なぜ、<em>小学生の今</em>なのか。</h2>
+    <p class="xp2-why__body">脳と感性が最もやわらかい小学生の時期に、AIと「考える対話」を重ねることで、<strong>"AIを道具として使いこなす感覚"</strong>と、<strong>"自分の頭で考え抜く習慣"</strong>を同時に育てることができます。<br/><br/>これは、AIネイティブ世代として未来を生きるすべての子どもにとって、最も価値のある"基礎体験"になります。</p>
+  </div>
+</section>
+
+<!-- ============ Menu ============ -->
+<section class="xp2-menu">
+  <div class="wrap">
+    <div class="xp2-menu__head reveal">
+      <span class="eyebrow">Experience menu</span>
+      <h2 class="h-section">体験会で体験できる、<br/>4つのこと。</h2>
+      <p class="lead" style="margin: 22px auto 0; max-width: 600px;">お子さまの興味に合わせて、4つのジャンルから1つを選んで体験いただけます。</p>
+    </div>
+
+    <div class="xp2-menu__grid">
+      <article class="xp2-card xp2-card--art reveal">
+        <div class="xp2-card__visual">
+          <span class="xp2-card__tag">EXP 01 / ART</span>
+          <span class="xp2-card__emoji" aria-hidden="true"><svg class="sig-icon"><use href="images/icons.svg#icon-art"></use></svg></span>
+        </div>
+        <div class="xp2-card__body">
+          <h3 class="xp2-card__name">デジタルアート</h3>
+          <p class="xp2-card__copy">「こんな世界を描きたい」をAIに伝えて画像を生成。色・構図・雰囲気を何度も対話しながら、自分だけの一枚を仕上げます。</p>
+          <div class="xp2-card__point">
+            <span class="xp2-card__point__lbl">Thinking point</span>
+            <p class="xp2-card__point__text">頭の中のイメージを、どう"言葉"にして伝えるか？</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="xp2-card xp2-card--video reveal">
+        <div class="xp2-card__visual">
+          <span class="xp2-card__tag">EXP 02 / VIDEO</span>
+          <span class="xp2-card__emoji" aria-hidden="true"><svg class="sig-icon"><use href="images/icons.svg#icon-video"></use></svg></span>
+        </div>
+        <div class="xp2-card__body">
+          <h3 class="xp2-card__name">動画</h3>
+          <p class="xp2-card__copy">AIと一緒にストーリーを考え、キャラクターを動かす。短い動画作品をつくりながら、物語の組み立て方を学びます。</p>
+          <div class="xp2-card__point">
+            <span class="xp2-card__point__lbl">Thinking point</span>
+            <p class="xp2-card__point__text">伝えたいことを、どう"順番"で見せるか？</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="xp2-card xp2-card--music reveal">
+        <div class="xp2-card__visual">
+          <span class="xp2-card__tag">EXP 03 / MUSIC</span>
+          <span class="xp2-card__emoji" aria-hidden="true"><svg class="sig-icon"><use href="images/icons.svg#icon-music"></use></svg></span>
+        </div>
+        <div class="xp2-card__body">
+          <h3 class="xp2-card__name">音楽</h3>
+          <p class="xp2-card__copy">気持ちや情景をAIに伝えて、オリジナル曲・歌詞をつくる。"言葉にできない感覚"を音にする面白さを体験できます。</p>
+          <div class="xp2-card__point">
+            <span class="xp2-card__point__lbl">Thinking point</span>
+            <p class="xp2-card__point__text">感情や情景を、どう"音"にして表現するか？</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="xp2-card xp2-card--game reveal">
+        <div class="xp2-card__visual">
+          <span class="xp2-card__tag">EXP 04 / GAME</span>
+          <span class="xp2-card__emoji" aria-hidden="true"><svg class="sig-icon"><use href="images/icons.svg#icon-game"></use></svg></span>
+        </div>
+        <div class="xp2-card__body">
+          <h3 class="xp2-card__name">ゲーム</h3>
+          <p class="xp2-card__copy">「どんなルールにすれば面白い？」をAIと相談。世界観・キャラ・ルールを設計しながら、自分のゲームを形にしていきます。</p>
+          <div class="xp2-card__point">
+            <span class="xp2-card__point__lbl">Thinking point</span>
+            <p class="xp2-card__point__text">面白さは、どんな"仕組み"で生まれるのか？</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Trial about ============ -->
+<section class="xp2-trial">
+  <div class="xp2-trial__visual reveal">
+    <div class="xp2-trial__photo">
+    </div>
+    <div class="xp2-trial__badge">
+      <div>
+        <div class="xp2-trial__badge__big">60分</div>
+        <div class="xp2-trial__badge__small">FREE TRIAL</div>
+      </div>
+    </div>
+    <div class="xp2-trial__stats">
+      <div class="xp2-trial__stats__big">¥10,000 OFF</div>
+      <div class="xp2-trial__stats__lbl">当日入会で 入会金</div>
+    </div>
+  </div>
+  <div class="xp2-trial__copy reveal">
+    <span class="eyebrow">About the trial</span>
+    <h2>体験会は、<br/>"思考のプロセスを<br/>観察する"時間。</h2>
+    <p>体験会では、お子さまが実際にAIと対話しながら、作品をつくっていく様子をご覧いただけます。<strong>「完成品」よりも、その途中で何度も考え直したり、選び直したりする"プロセス"</strong>に、SIGNONの学びの本質が現れます。</p>
+    <p>保護者さまには、お子さまの普段とは少し違う表情や、ふとした言葉の中にある"成長の種"を、ぜひ感じていただけたらと思います。</p>
+
+    <div class="xp2-trial__details">
+      <div class="xp2-trial__detail">
+        <div class="xp2-trial__detail__lbl">所要時間</div>
+        <div class="xp2-trial__detail__val">60 分</div>
+      </div>
+      <div class="xp2-trial__detail">
+        <div class="xp2-trial__detail__lbl">参加費</div>
+        <div class="xp2-trial__detail__val">無料</div>
+      </div>
+      <div class="xp2-trial__detail xp2-trial__detail--bonus" style="grid-column: span 2;">
+        <div class="xp2-trial__detail__lbl">体験会当日に入会の場合</div>
+        <div class="xp2-trial__detail__val">入会金 10,000円 OFF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Final CTA ============ -->
+<section style="padding: 0 0 clamp(60px, 8vw, 100px);">
+  <div class="xp2-final reveal">
+    <div class="xp2-final__inner">
+      <span class="xp2-final__pre">Join the studio</span>
+      <h2>お子さまの<br/>"考える力"のスイッチを、<br/>一緒に押しませんか？</h2>
+      <p>まずは1回、SIGNONの体験会で。<br/>お子さまの新しい一面に、きっと出会えます。</p>
+      <div class="xp2-final__buttons">
+        <a href="https://lin.ee/rTMgnyl" class="btn btn--primary">LINEで体験を申し込む <span class="arrow">→</span></a>
+        <a href="https://lin.ee/9FFK1Oe" class="line-add" target="_blank" rel="noopener" aria-label="LINEで友だち追加"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" /></a>
+      </div>
+      <div class="xp2-final__note">
+        <span>所要時間 60分</span>
+        <span>参加費 無料</span>
+        <span>当日入会で 入会金10,000円OFF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><img class="brand__logo" src="images/logo.svg" alt="SIGNON" /></div>
+        <p class="footer__tag">小学生のためのAIスクール。<br/>"考える力・伝える力"を、AIとともに育てます。</p>
+      </div>
+      <div class="footer__col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">SIGNONとは</a></li>
+          <li><a href="school.html">スクールについて</a></li>
+          <li><a href="experience.html">体験について</a></li>
+          <li><a href="https://lin.ee/rTMgnyl">体験申込</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p class="footer__address">
+          東京都港区虎ノ門３丁目<br/>
+          ８－２６巴町アネックス５Ｆ<br/><br/>
+          03-5309-2591
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 SIGNON Inc.</span>
+      <span>An AI school for primary kids — Tokyo</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js?v=design-polish-20260607"></script>
+</body>
+</html>

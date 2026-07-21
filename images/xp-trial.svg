@@ -1,0 +1,79 @@
+<svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="体験会の様子">
+  <defs>
+    <radialGradient id="tp1" cx="40%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#E07856" stop-opacity=".45"></stop>
+      <stop offset="60%" stop-color="#E07856" stop-opacity=".1"></stop>
+      <stop offset="100%" stop-color="#EFE8D8"></stop>
+    </radialGradient>
+    <radialGradient id="tp2" cx="80%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#8A8FD9" stop-opacity=".5"></stop>
+      <stop offset="100%" stop-color="#8A8FD9" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="500" height="600" fill="url(#tp1)"></rect>
+  <rect width="500" height="600" fill="url(#tp2)"></rect>
+
+  
+  <rect x="0" y="440" width="500" height="160" fill="#1F1B16" opacity=".08"></rect>
+  <rect x="60" y="380" width="380" height="14" rx="3" fill="#1F1B16" opacity=".2"></rect>
+  <rect x="60" y="394" width="380" height="50" fill="#1F1B16" opacity=".1"></rect>
+
+  
+  <g transform="translate(310,170)">
+    
+    <path d="M-30 230 Q-30 130 50 130 Q130 130 130 230 L130 280 L-30 280 Z" fill="#5559B8"></path>
+    
+    <rect x="38" y="115" width="24" height="22" fill="#E5B79A"></rect>
+    
+    <circle cx="50" cy="80" r="40" fill="#F0C8AB"></circle>
+    
+    <path d="M10 80 Q10 30 50 30 Q92 30 92 84 Q86 70 70 65 Q56 70 40 67 Q26 72 18 90 Z" fill="#3B362E"></path>
+    
+    <circle cx="38" cy="84" r="3" fill="#1F1B16"></circle>
+    <circle cx="62" cy="84" r="3" fill="#1F1B16"></circle>
+    
+    <path d="M40 96 Q50 102 60 96" stroke="#1F1B16" stroke-width="2.2" fill="none" stroke-linecap="round"></path>
+  </g>
+
+  
+  <g transform="translate(90,240)">
+    <path d="M-10 200 Q-10 130 50 130 Q110 130 110 200 L110 240 L-10 240 Z" fill="#E07856"></path>
+    <rect x="40" y="115" width="22" height="20" fill="#F0C8AB"></rect>
+    <circle cx="50" cy="80" r="38" fill="#F0C8AB"></circle>
+    <path d="M14 80 Q14 36 50 36 Q88 36 88 84 Q80 64 64 60 Q50 66 36 62 Q24 68 18 86 Z" fill="#1F1B16"></path>
+    <circle cx="38" cy="84" r="3.2" fill="#1F1B16"></circle>
+    <circle cx="62" cy="84" r="3.2" fill="#1F1B16"></circle>
+    <path d="M40 96 Q50 102 60 96" stroke="#1F1B16" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+    <circle cx="34" cy="92" r="3" fill="#E07856" opacity=".5"></circle>
+    <circle cx="66" cy="92" r="3" fill="#E07856" opacity=".5"></circle>
+  </g>
+
+  
+  <g transform="translate(170,360)">
+    <rect x="0" y="0" width="180" height="22" rx="3" fill="#1F1B16"></rect>
+    <rect x="14" y="-100" width="152" height="100" rx="8" fill="#1F1B16"></rect>
+    <rect x="22" y="-92" width="136" height="84" rx="4" fill="#F6F1E7"></rect>
+    <rect x="32" y="-82" width="40" height="5" rx="2" fill="#E07856"></rect>
+    <rect x="32" y="-72" width="100" height="3" rx="1" fill="#1F1B16" opacity=".35"></rect>
+    <rect x="32" y="-64" width="80" height="3" rx="1" fill="#1F1B16" opacity=".35"></rect>
+    <rect x="32" y="-52" width="50" height="34" rx="4" fill="#F5D9CB"></rect>
+    <circle cx="48" cy="-38" r="6" fill="#E07856"></circle>
+    <path d="M40 -22 L48 -32 L60 -26 L72 -34 L78 -22 Z" fill="#B85636"></path>
+    <rect x="90" y="-52" width="44" height="6" rx="2" fill="#8A8FD9"></rect>
+    <rect x="90" y="-42" width="40" height="3" rx="1" fill="#1F1B16" opacity=".3"></rect>
+    <rect x="90" y="-34" width="44" height="3" rx="1" fill="#1F1B16" opacity=".3"></rect>
+    <rect x="90" y="-22" width="20" height="6" rx="2" fill="#E07856"></rect>
+  </g>
+
+  
+  <g transform="translate(40,80)">
+    <rect x="0" y="0" width="150" height="56" rx="14" fill="#F6F1E7" stroke="#1F1B16" stroke-width="2"></rect>
+    <text x="14" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#B85636">こんな世界！</text>
+    <path d="M28 56 L36 70 L44 56 Z" fill="#F6F1E7" stroke="#1F1B16" stroke-width="2"></path>
+  </g>
+
+  
+  <path d="M430 90 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5 z" fill="#B85636"></path>
+  <circle cx="60" cy="500" r="5" fill="#E07856"></circle>
+  <circle cx="440" cy="520" r="6" fill="#8A8FD9"></circle>
+</svg>

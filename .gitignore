@@ -1,0 +1,14 @@
+# OS / エディタ
+.DS_Store
+
+# Cloud Run 用インフラ（GitHub Pages では不要・プロジェクトID等を公開しない）
+Dockerfile
+nginx.conf
+.dockerignore
+deploy_cloud_run.sh
+map_custom_domain.sh
+DEPLOY.md
+*.command
+
+# 旧ビルド書き出し（本番未使用）
+export/

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SIGNON｜小学生のためのAIスクール</title>
+<meta name="description" content="SIGNON（サイノーン）は、小学生向けのAIスクール。楽しみながら&quot;考える力・伝える力&quot;を育て、未来の基礎力を養います。" />
+<link rel="stylesheet" href="styles.css?v=design-polish-20260607" />
+<style>
+  /* ================================================================
+     SIGNON — ホームページ専用スタイル (クリーン2D・余白統一版)
+     ================================================================ */
+
+  :root {
+    --home-blue:   #0870c9;
+    --home-orange: #ff7a2f;
+    --home-green:  #29c765;
+    --home-shadow: 0 12px 36px -20px rgba(8,112,201,.18);
+    --card-radius: 20px;
+  }
+
+  /* ── ページ背景 ── */
+  body {
+    background:
+      radial-gradient(circle at 4%  8%,  rgba(255,200,120,.26), transparent 30%),
+      radial-gradient(circle at 94%  6%, rgba(255,150, 95,.16), transparent 26%),
+      radial-gradient(circle at 50% 100%, rgba(255,180,130,.12), transparent 32%),
+      linear-gradient(158deg, #fffef8 0%, #fff9f0 40%, #fffcf4 70%, #fff6ec 100%);
+    overflow-x: hidden;
+  }
+
+  /* ================================================================
+     ヒーロー
+     ================================================================ */
+  .hero {
+    position: relative;
+    padding: clamp(80px, 10vw, 130px) 0 clamp(64px, 8vw, 100px);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute;
+    width: 500px; height: 500px; border-radius: 50%;
+    top: -180px; right: -100px;
+    background: radial-gradient(circle, rgba(255,165,70,.24) 0%, transparent 70%);
+    filter: blur(32px); pointer-events: none;
+  }
+  .hero::after {
+    content: ""; position: absolute;
+    width: 360px; height: 360px; border-radius: 50%;
+    bottom: -130px; left: -70px;
+    background: radial-gradient(circle, rgba(8,112,201,.14) 0%, transparent 70%);
+    filter: blur(26px); pointer-events: none;
+  }
+  .hero__inner {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero__copy { max-width: 620px; }
+  .eyebrow { color: var(--home-blue); }
+  .eyebrow::before { background: var(--home-blue); }
+  .hero__title {
+    margin: 18px 0 24px;
+    color: var(--home-blue);
+    font-size: clamp(44px, 5.6vw, 76px);
+    line-height: 1.1; letter-spacing: -.01em;
+  }
+  .hero__title em {
+    font-style: normal;
+    background: linear-gradient(120deg, var(--home-orange) 0%, #e05000 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero__sub {
+    font-size: clamp(15px, 1.3vw, 17px);
+    line-height: 2.0; color: #31536a;
+    margin: 0 0 36px; font-weight: 700;
+  }
+  .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn { border-radius: 999px; padding: 15px 28px; }
+  .btn--primary {
+    background: var(--home-orange); color: white;
+    box-shadow: 0 12px 28px -14px rgba(255,122,47,.6);
+  }
+  .btn--primary:hover { background: #f46820; transform: translateY(-2px); }
+  .line-add {
+    border: 2px solid var(--home-green); border-radius: 999px;
+    background: white; padding: 10px 18px;
+    color: #12a84d; font-weight: 900;
+    box-shadow: 0 10px 24px -16px rgba(41,199,101,.5);
+  }
+  .line-add img { display: none; }
+  .line-add::before { content: "LINEで相談する"; }
+  .hero__meta {
+    margin-top: 36px;
+    display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px;
+    font-family: var(--font-body);
+  }
+  .hero__meta span {
+    min-height: 68px; padding: 12px 14px; border-radius: 14px;
+    background: rgba(255,255,255,.85);
+    border: 1px solid rgba(8,112,201,.09);
+    box-shadow: 0 6px 20px -12px rgba(8,112,201,.16);
+    color: #31536a; font-size: 12.5px; font-weight: 900; line-height: 1.55;
+    display: flex; align-items: flex-start; gap: 7px;
+  }
+  .hero__meta span::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--home-orange); margin-top: 5px; flex-shrink: 0;
+  }
+  .hero__visual { position: relative; aspect-ratio: 4/3; display: block; }
+  .hero__video {
+    width: 100%; height: 100%; border-radius: 24px; overflow: hidden;
+    box-shadow: 0 28px 64px -24px rgba(8,112,201,.28);
+    background: url('images/generated/kids-tablet-ai.jpg') center/cover no-repeat;
+  }
+  .hero__video .slot__video { object-fit: cover; }
+  .hero__chip {
+    position: absolute; background: white; padding: 11px 15px; border-radius: 13px;
+    box-shadow: 0 8px 24px -12px rgba(8,112,201,.22);
+    font-size: 12.5px; font-weight: 700; display: flex; align-items: center; gap: 9px;
+  }
+  .hero__chip--1 { top: 20px; left: -26px; }
+  .hero__chip--2 { bottom: 42px; right: -22px; }
+  .hero__chip__dot { width: 8px; height: 8px; border-radius: 50%; }
+  .hero__chip--1 .hero__chip__dot { background: var(--home-orange); }
+  .hero__chip--2 .hero__chip__dot { background: var(--home-blue); }
+
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 44px; }
+    .hero__chip { display: none; }
+    .hero__meta { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 580px) {
+    .hero__meta { grid-template-columns: 1fr; }
+    .hero__visual { aspect-ratio: 16/9; }
+  }
+
+  /* ================================================================
+     マーキーストリップ
+     ================================================================ */
+  .strip {
+    border-top: 1px solid rgba(220,150,80,.2);
+    border-bottom: 1px solid rgba(220,150,80,.2);
+    background: rgba(255,245,225,.55);
+    overflow: hidden; padding: 20px 0; margin-top: 20px;
+  }
+  .strip__track { display: flex; width: max-content; gap: 60px; white-space: nowrap; animation: scroll 40s linear infinite; }
+  .strip__item {
+    flex: 0 0 auto;   /* 縮小させず自然幅を保つ（重なり防止） */
+    font-family: var(--font-display); font-weight: 900; font-size: 20px;
+    color: var(--ink); display: inline-flex; align-items: center; gap: 20px;
+  }
+  .strip__item::after { content: "✦"; color: var(--home-orange); font-size: 15px; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ================================================================
+     セクション共通 — 背景なし（カード単体で見せる）
+     ================================================================ */
+  .section,
+  .intro,
+  .reasons,
+  .pillars,
+  .make,
+  .cta {
+    position: relative;
+  }
+  /* セクション背景パネルは使わない → 白枠の二重を防ぐ */
+  .section::before, .intro::before, .reasons::before,
+  .pillars::before, .make::before { display: none !important; }
+
+  /* ================================================================
+     フィロソフィー（2列テキスト）
+     ================================================================ */
+  #philosophy {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  #philosophy .wrap {
+    background: white;
+    border: 1px solid rgba(8,112,201,.09);
+    border-radius: 26px;
+    padding: clamp(32px, 4.5vw, 52px);
+    box-shadow: var(--home-shadow);
+  }
+  .h-section { color: var(--home-blue); text-align: center; }
+  #philosophy .h-section,
+  .intro .h-section { text-align: left; }
+
+  /* ================================================================
+     イントロ（画像左 + テキスト右）
+     ================================================================ */
+  .intro { padding: clamp(72px, 9vw, 110px) 0; }
+  .intro__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .intro__visual {
+    aspect-ratio: 4/5;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 56px -28px rgba(8,112,201,.24);
+  }
+  .intro__copy {
+    /* 白ボックスなし — テキストを直接表示 */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .intro__copy p {
+    font-size: clamp(15px, 1.25vw, 16.5px);
+    line-height: 2.05; color: #4a6070; margin: 0 0 16px;
+  }
+  @media (max-width: 860px) { .intro__inner { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* ================================================================
+     5つのスキル
+     ================================================================ */
+  .skills {
+    display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px;
+  }
+  .skill {
+    min-height: 152px; padding: 24px 18px; border-radius: var(--card-radius);
+    background: white;
+    border: 1px solid rgba(8,112,201,.1);
+    box-shadow: var(--home-shadow);
+    text-align: center; align-items: center; justify-content: center; gap: 10px;
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s;
+  }
+  .skill:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,122,47,.4);
+    box-shadow: 0 18px 42px -20px rgba(200,100,30,.28);
+  }
+  .skill__name { font-size: 19px; color: #17355b; font-family: var(--font-display); font-weight: 900; }
+  .skill__tag { color: var(--home-orange); font-size: 12px; line-height: 1.5; font-weight: 700; }
+  .skill__desc { font-size: 11.5px; line-height: 1.7; color: #5f7187; }
+  @media (max-width: 960px) { .skills { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+  @media (max-width: 600px) { .skills { grid-template-columns: 1fr 1fr; } }
+
+  /* ================================================================
+     カリキュラム（age cards）
+     ================================================================ */
+  .reasons { padding: clamp(72px, 9vw, 112px) 0; }
+  .reasons__head {
+    text-align: center; max-width: 720px; margin: 0 auto 48px;
+  }
+  .reasons__head h2 { color: var(--home-blue); max-width: none; }
+  .reasons__head .lead {
+    margin: 16px auto 0 !important; max-width: 440px !important; text-wrap: balance !important;
+  }
+  .reasons__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+  .age-card {
+    overflow: hidden; border-radius: var(--card-radius);
+    background: white;
+    border: 1px solid rgba(8,112,201,.1);
+    box-shadow: var(--home-shadow);
+    display: flex; flex-direction: column;
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s;
+  }
+  .age-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,122,47,.38);
+    box-shadow: 0 18px 48px -22px rgba(200,100,30,.3);
+  }
+  .age-card__photo { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .age-card__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 22px 22px; flex: 1; }
+  .age-card__num { color: var(--home-blue); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; }
+  .age-card__age { color: var(--home-blue); font-size: 34px; font-family: var(--font-display); font-weight: 900; line-height: 1; }
+  .age-card__title { font-family: var(--font-display); font-weight: 700; font-size: 17.5px; line-height: 1.5; color: #17355b; }
+  .age-card__desc { font-size: 13px; line-height: 1.85; color: #5a7080; flex: 1; }
+  .age-card__link {
+    display: flex; justify-content: center; align-items: center; gap: 6px;
+    border: 1.5px solid rgba(8,112,201,.22); border-radius: 999px;
+    padding: 10px 16px; color: var(--home-blue); font-weight: 700; font-size: 13px;
+    margin-top: 4px;
+    transition: background .2s, color .2s;
+  }
+  .age-card__link:hover { background: var(--home-blue); color: white; }
+  @media (max-width: 780px) { .reasons__grid { grid-template-columns: 1fr; } }
+
+  /* ================================================================
+     3つのこと（pillars）
+     ================================================================ */
+  .pillars { padding: clamp(72px, 9vw, 112px) 0; }
+  .pillars__head { max-width: none; text-align: center; margin-bottom: 44px; }
+  .pillars__head h2 { color: var(--home-blue); margin-top: 12px; }
+  .pillars__grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 22px;
+  }
+  .pillar {
+    border-radius: var(--card-radius);
+    background: white;
+    border: 1px solid rgba(8,112,201,.1);
+    box-shadow: var(--home-shadow);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s;
+  }
+  .pillar:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,122,47,.38);
+    box-shadow: 0 18px 48px -22px rgba(200,100,30,.3);
+  }
+  .pillar__img {
+    width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;
+    flex-shrink: 0;
+  }
+  .pillar__body { padding: 24px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .pillar__num { color: var(--home-blue); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; }
+  .pillar__title { color: #17355b; font-size: 18px; font-family: var(--font-display); font-weight: 900; line-height: 1.45; }
+  .pillar__desc { font-size: 13px; line-height: 1.85; color: #5a7080; }
+  @media (max-width: 780px) { .pillars__grid { grid-template-columns: 1fr; } }
+
+  /* ================================================================
+     AIでつくれるもの（make）
+     ================================================================ */
+  .make { padding: clamp(72px, 9vw, 112px) 0; }
+  .make__head { text-align: center; max-width: 760px; margin: 0 auto 40px; }
+  .make__head h2 { color: var(--home-blue); margin-top: 12px; }
+  .make__grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px; }
+  .make-card {
+    background: white;
+    border: 1px solid rgba(8,112,201,.1);
+    border-radius: var(--card-radius);
+    padding: 22px 18px;
+    min-height: 196px; display: flex; flex-direction: column; gap: 10px;
+    box-shadow: var(--home-shadow);
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s;
+  }
+  .make-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,122,47,.36);
+    box-shadow: 0 16px 40px -20px rgba(200,100,30,.28);
+  }
+  .make-card__icon { display: none; }
+  .make-card__badgeicon {
+    width: 44px; height: 44px; border-radius: 14px;
+    display: grid; place-items: center; color: var(--home-blue);
+    background: rgba(230,244,255,.9);
+    border: 1px solid rgba(8,112,201,.14);
+  }
+  .make-card__badgeicon .sig-icon { width: 24px; height: 24px; }
+  .make-card__label {
+    margin: 0; color: var(--home-orange);
+    font-family: var(--font-mono); font-size: 9.5px; font-weight: 900;
+    letter-spacing: .14em; text-transform: uppercase;
+  }
+  .make-card__name { font-weight: 900; color: #1e3f5a; font-size: 15px; line-height: 1.45; }
+  .make-card__desc { margin: 0; color: #5a7080; font-size: 12px; line-height: 1.72; }
+  .make-card__learn {
+    margin-top: auto; padding-top: 9px;
+    border-top: 1px solid rgba(8,112,201,.1);
+    color: var(--home-blue); font-size: 11.5px; line-height: 1.5; font-weight: 700;
+  }
+  @media (max-width: 960px) { .make__grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 580px) { .make__grid { grid-template-columns: 1fr; } }
+
+  /* ================================================================
+     CTA バナー
+     ================================================================ */
+  .cta {
+    margin: clamp(56px, 8vw, 96px) var(--pad-x) 0;
+    background: linear-gradient(135deg, #fff1e6 0%, #e8f5ff 100%);
+    border: 1px solid rgba(8,112,201,.12);
+    border-radius: 28px;
+    padding: clamp(52px, 7vw, 84px) clamp(32px, 5.5vw, 76px);
+    box-shadow: var(--home-shadow);
+  }
+  .cta__inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+  .cta__title { color: var(--home-blue); text-align: left; font-size: clamp(30px, 4.2vw, 52px); line-height: 1.2; margin: 16px 0 0; }
+  .cta__sub { color: #31536a; font-size: 15px; line-height: 1.9; margin: 20px 0 30px; }
+  .cta__cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .cta .btn--ghost { color: var(--home-green); border-color: var(--home-green); background: white; }
+  .cta .btn--ghost:hover { background: var(--home-green); color: white; }
+  .cta__phone { font-family: var(--font-mono); font-size: 13px; color: #31536a; }
+  .cta__phone strong { display: block; font-family: var(--font-display); font-size: 25px; color: #17355b; margin-top: 4px; }
+  @media (max-width: 760px) { .cta__inner { grid-template-columns: 1fr; gap: 36px; } }
+
+  /* ================================================================
+     ナビゲーション
+     ================================================================ */
+  .nav {
+    background: rgba(255,255,255,.90) !important;
+    border-bottom: 1px solid rgba(8,112,201,.08) !important;
+    box-shadow: 0 8px 24px -18px rgba(8,112,201,.2) !important;
+  }
+  .brand { color: var(--home-blue); }
+  .brand__mark { background: linear-gradient(135deg, #46b8ff, var(--home-blue)); border-radius: 12px; }
+  .nav__links a:hover { color: var(--home-blue); }
+  .nav__links a.is-current::after { background: var(--home-orange); }
+  .nav__cta { background: var(--home-orange); color: white; padding: 14px 22px; }
+  .nav__cta:hover { background: #f46820; }
+
+  @media (max-width: 900px) { .desktop-copy { display: none; } }
+
+  /* ================================================================
+     3D ツリーヒーロー
+     ================================================================ */
+  #tree-hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 560px;
+    overflow: hidden;
+  }
+  /* 入口ポータル：スクロール無効＋ナビ非表示（クリック専用） */
+  /* スクロール可能ポータル：ナビは常に表示、ヒーローはナビ下にぴったり収まる */
+  #tree-hero { height: calc(100svh - 86px); }
+  @media (max-width: 900px) { #tree-hero { height: calc(100svh - 74px); } }
+
+  /* ── スイッチON時：5つの未来スキルが弾けるバースト ── */
+  .skill-pop {
+    position: absolute;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(15px, 1.6vw, 22px);
+    white-space: nowrap;
+    pointer-events: none;
+    text-shadow: 0 2px 18px rgba(255,255,255,.65);
+    opacity: 0;
+    animation: skillPop 1.6s cubic-bezier(.16,.8,.3,1) forwards;
+  }
+  @keyframes skillPop {
+    0%   { opacity: 0; transform: translate(-50%,-50%) scale(.3); }
+    18%  { opacity: 1; transform: translate(-50%,-50%) scale(1.18); }
+    35%  { transform: translate(calc(-50% + var(--dx) * .55), calc(-50% + var(--dy) * .55)) scale(1); }
+    100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(.92); }
+  }
+  #tree-canvas {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    display: block;
+  }
+  /* ── HTML ラベル（葉っぱボタン） ── */
+  #tree-labels {
+    position: absolute; inset: 0;
+    pointer-events: none;
+  }
+  .tree-label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(11px, 1.1vw, 14px);
+    white-space: nowrap;
+    padding: 7px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    transition: transform .2s ease, opacity .2s ease;
+    user-select: none;
+  }
+  .tree-label:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  /* ── ブランド（左上） ── */
+  .space-brand {
+    position: absolute;
+    top: 26px; left: clamp(20px, 4vw, 54px);
+    z-index: 4; pointer-events: none;
+  }
+  .space-brand__logo {
+    height: 40px; width: auto;
+    filter: drop-shadow(0 4px 16px rgba(255,200,120,.6)) brightness(1.1);
+  }
+
+  /* ── 右側コピー：スクール理念（グラスパネル） ── */
+  .space-copy {
+    position: absolute;
+    top: 50%; right: clamp(22px, 5vw, 78px);
+    transform: translateY(-50%);
+    z-index: 4;
+    width: clamp(320px, 38vw, 480px);
+    padding: clamp(26px, 3vw, 40px);
+    border-radius: 26px;
+    background: linear-gradient(150deg, rgba(255,253,247,.78) 0%, rgba(255,247,235,.55) 100%);
+    border: 1px solid rgba(220,160,90,.30);
+    box-shadow: 0 26px 60px -28px rgba(140,80,20,.4), inset 0 1px 0 rgba(255,255,255,.8);
+    backdrop-filter: blur(14px) saturate(130%);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    animation: spaceCopyIn 1s ease .2s both;
+  }
+  @keyframes spaceCopyIn {
+    from { opacity: 0; transform: translateY(-50%) translateX(20px); }
+    to   { opacity: 1; transform: translateY(-50%) translateX(0); }
+  }
+  .space-copy__eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: .16em;
+    color: #c07a28; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .space-copy__eyebrow::before {
+    content: ""; width: 22px; height: 1px;
+    background: linear-gradient(90deg, transparent, #c07a28);
+  }
+  .space-copy__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(26px, 2.8vw, 40px);
+    line-height: 1.5; letter-spacing: .01em;
+    color: #17355b;
+    text-shadow: 0 2px 18px rgba(255,255,255,.6);
+  }
+  .space-copy__title em {
+    font-style: normal;
+    background: linear-gradient(120deg, #ff9a3a 0%, #ff7a2f 55%, #e85a8a 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .space-copy__lead {
+    margin: 22px 0 30px;
+    font-size: clamp(13px, 1.0vw, 15px);
+    line-height: 2.05; color: #4a6070;
+    word-break: keep-all;
+  }
+  .space-copy__cta {
+    display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+  }
+  .space-copy__cta .btn--primary {
+    background: linear-gradient(120deg, #ff9a4d, #ff681c);
+    color: #fff;
+    box-shadow: 0 14px 32px -10px rgba(255,120,40,.75);
+  }
+  .space-copy__cta .btn--primary:hover { transform: translateY(-2px); filter: brightness(1.05); }
+  .space-copy__ghost {
+    color: #0870c9; font-weight: 700; font-size: 14px;
+    text-decoration: none; letter-spacing: .02em;
+    transition: color .2s;
+  }
+  .space-copy__ghost:hover { color: #ff7a2f; }
+
+  /* ── スクール理念バンド（スマホのみ・ヒーロー直後） ── */
+  .philosophy-band {
+    display: none;   /* PCはヒーロー右の space-copy を使うため非表示 */
+    padding: clamp(48px, 9vw, 80px) 0;
+    text-align: center;
+    background: linear-gradient(180deg, #fffdf7 0%, #fff6ec 100%);
+    border-bottom: 1px solid rgba(220,160,90,.16);
+  }
+  .philosophy-band__eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
+    color: #c07a28; text-transform: uppercase; margin-bottom: 18px;
+  }
+  .philosophy-band__eyebrow::before,
+  .philosophy-band__eyebrow::after {
+    content: ""; width: 22px; height: 1px; background: rgba(192,122,40,.6);
+  }
+  .philosophy-band__title {
+    margin: 0 auto; max-width: 860px;
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(26px, 4vw, 44px); line-height: 1.5; color: #17355b;
+  }
+  .philosophy-band__title em {
+    font-style: normal;
+    background: linear-gradient(120deg, #ff9a3a 0%, #ff7a2f 55%, #e85a8a 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .philosophy-band__lead {
+    margin: 24px auto 34px; max-width: 700px;
+    font-size: clamp(14px, 1.4vw, 17px); line-height: 2.0; color: #4a6070;
+  }
+  .philosophy-band__cta {
+    display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  }
+  @media (max-width: 600px) {
+    .philosophy-band__title br, .philosophy-band__lead br { display: none; }
+    .philosophy-band__title { word-break: keep-all; }
+    .philosophy-band__cta { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
+    .philosophy-band__cta .btn { justify-content: center; }
+  }
+
+  /* ── 操作ヒント（左下） ── */
+  .tree-hint {
+    position: absolute;
+    bottom: 30px; left: clamp(20px, 4vw, 54px);
+    background: rgba(255,253,247,.78);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(220,160,90,.32);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 13px; font-weight: 700; color: #31536a;
+    white-space: nowrap; pointer-events: none;
+    z-index: 4;
+  }
+  /* ── スクロール誘導（下中央） ── */
+  .tree-scroll {
+    position: absolute;
+    bottom: 26px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: #31536a; font-size: 12px; font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 1px 8px rgba(255,255,255,.8);
+    animation: treeBounce 2s ease-in-out infinite;
+    z-index: 4;
+  }
+  .tree-scroll svg { width: 22px; height: 22px; }
+  @keyframes treeBounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── レスポンシブ：スマホは理念をヒーローから外し木を主役に ── */
+  @media (max-width: 900px) {
+    .space-copy { display: none; }       /* ヒーロー内パネルは隠す */
+    .philosophy-band { display: block; } /* 代わりにヒーロー直後で見せる */
+    .tree-hint { display: none; }
+  }
+  @media (max-width: 600px) {
+    .tree-label { font-size: 10.5px; padding: 6px 13px; }
+    .space-brand__logo { height: 34px; }
+    .space-copy { bottom: 64px; padding: 22px 20px; }
+  }
+</style>
+<link rel="stylesheet" href="nav.css?v=design-polish-20260607" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html"><img class="brand__logo" src="images/logo.svg" alt="SIGNON" /></a>
+    <div class="nav__links">
+      <a href="index.html" class="is-current">ホーム</a>
+      <a href="about.html">SIGNONとは</a>
+      <a href="school.html">スクールについて</a>
+      <a href="experience.html">体験について</a>
+      <a href="https://lin.ee/rTMgnyl" class="nav__cta">体験申込 →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== 3D 宇宙ナビゲーション ヒーロー ====== -->
+<section id="tree-hero" aria-label="3D宇宙ナビゲーション">
+  <canvas id="tree-canvas"></canvas>
+  <div id="tree-labels" aria-hidden="true"></div>
+
+  <!-- 右側コピー：スクール理念（PCのみ・ヒーロー右） -->
+  <div class="space-copy">
+    <span class="space-copy__eyebrow">Our Philosophy — スクール理念</span>
+    <h1 class="space-copy__title">AIを<em>パートナー</em>に、<br/>考え、つくる力を育てる。</h1>
+    <p class="space-copy__lead">正解のない問いに向き合い、<br/>試行錯誤しながら自分なりの答えを見つける。<br/>AIに使われるのではなく、AIと対話しながら<br/>表現する力を育みます。</p>
+    <div class="space-copy__cta">
+      <a href="https://lin.ee/rTMgnyl" class="btn btn--primary">無料体験に申込 <span class="arrow">→</span></a>
+      <a href="about.html" class="space-copy__ghost">SIGNONについて →</a>
+    </div>
+  </div>
+
+  <!-- スクロールでも入れる -->
+  <a href="#about-intro" class="tree-scroll">
+    <span>スクロールでもご覧いただけます</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<!-- スクール理念（ファーストビューから移動） -->
+<section class="philosophy-band">
+  <div class="wrap">
+    <span class="philosophy-band__eyebrow">Our Philosophy — スクール理念</span>
+    <h2 class="philosophy-band__title">AIを<em>パートナー</em>に、<br/>考え、つくる力を育てる。</h2>
+    <p class="philosophy-band__lead">正解のない問いに向き合い、試行錯誤しながら自分なりの答えを見つける。<br/>AIに使われるのではなく、AIと対話しながら表現する力を育みます。</p>
+    <div class="philosophy-band__cta">
+      <a href="https://lin.ee/rTMgnyl" class="btn btn--primary">無料体験に申込 <span class="arrow">→</span></a>
+      <a href="about.html" class="btn btn--ghost">SIGNONについて</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip__track">
+    <span class="strip__item">考える力</span>
+    <span class="strip__item">伝える力</span>
+    <span class="strip__item">創造する力</span>
+    <span class="strip__item">自分らしさ</span>
+    <span class="strip__item">未来をつくる</span>
+    <span class="strip__item">考える力</span>
+    <span class="strip__item">伝える力</span>
+    <span class="strip__item">創造する力</span>
+    <span class="strip__item">自分らしさ</span>
+    <span class="strip__item">未来をつくる</span>
+  </div>
+</div>
+
+<section class="intro" id="about-intro">
+  <div class="wrap intro__inner">
+    <div class="slot slot--peri slot--photo intro__visual reveal" style="background-image: url('images/generated/kids-tablet-ai.jpg');"><img src="images/generated/kids-tablet-ai.jpg" alt="タブレットを囲んでAI学習に取り組む小学生たち" class="slot__img"/></div>
+    <div class="intro__copy reveal">
+      <span class="eyebrow">SIGNONとは</span>
+      <h2 class="h-section" style="margin: 18px 0 28px;">一人ひとりの表現力を、<br/>AIとともに伸ばす。</h2>
+      <p>「やってみたい」「伝えたい」と思ったことを、AIを使って自分らしく表現できるようになる。それが、子どもたち自身で未来を創り出す力につながります。</p>
+      <p>SIGNONは、子どもたちの興味・関心を大切にした、AIを活用する新しい形の教育スクールです。AIを使った創造や表現活動を通じて、子どもたちが自分の考えやアイデアを形にし、自分の力で可能性を広げていくことを目指しています。</p>
+      <a href="about.html" class="btn btn--ghost" style="margin-top: 24px;">もっと詳しく <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="eyebrow">5 future skills</span>
+      <h2 class="h-section">SIGNONで育つ<br/>「5つの未来スキル」</h2>
+      <p class="lead" style="margin-top: 22px;">AIネイティブ世代に必須となる力を、AIツールとの対話を通じて育みます。</p>
+    </div>
+    <div class="skills">
+      <article class="skill reveal">
+        <div class="skill__name">表現力</div>
+        <div class="skill__tag">「伝える」から「伝わる」へ</div>
+        <div class="skill__desc">AIへの伝え方の工夫・考えを言葉にする練習</div>
+      </article>
+      <article class="skill reveal">
+        <div class="skill__name">探究力</div>
+        <div class="skill__tag">問いを立て、深掘りする</div>
+        <div class="skill__desc">AIとのアイデア出し・「なぜ？」を繰り返す</div>
+      </article>
+      <article class="skill reveal">
+        <div class="skill__name">協働力</div>
+        <div class="skill__tag">AIとも、仲間ともチームになる</div>
+        <div class="skill__desc">AIレクリエーション・チーム対抗アイデア出し</div>
+      </article>
+      <article class="skill reveal">
+        <div class="skill__name">倫理的思考力</div>
+        <div class="skill__tag">デジタル社会の善き使い手へ</div>
+        <div class="skill__desc">情報の裏付け確認・ネットリテラシー</div>
+      </article>
+      <article class="skill reveal">
+        <div class="skill__name">創造力</div>
+        <div class="skill__tag">0から1を生み出す想像力</div>
+        <div class="skill__desc">AIと一緒に作る・試作を繰り返す</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reasons" id="age-groups">
+  <div class="wrap">
+    <div class="reasons__head reveal">
+      <div>
+        <span class="eyebrow">Age curriculum</span>
+        <h2 class="h-section" style="margin-top: 16px;">学年に合わせた、<br/>3つのカリキュラム。</h2>
+      </div>
+      <p class="lead" style="max-width: 480px; margin: 0;">小学校6年間の発達段階に合わせて、<br>AIとの向き合い方を丁寧に設計しています。</p>
+    </div>
+
+    <div class="reasons__grid">
+      <article class="age-card reveal">
+        <img class="age-card__photo" src="images/generated/grade-1-ai.jpg" alt="AIにふれて楽しさを知る小学1年生"/>
+        <div class="age-card__body">
+          <div class="age-card__num">CURRICULUM 01</div>
+          <div class="age-card__age">1<small>年生</small></div>
+          <h3 class="age-card__title">遊びの中から、<br/>創造の種を見つける。</h3>
+          <p class="age-card__desc">AIに触れて楽しさを知り、<br>自分らしく表現する土台を育てます。</p>
+          <a class="age-card__link" href="about.html#grade-1">詳細を見る →</a>
+        </div>
+      </article>
+
+      <article class="age-card reveal">
+        <img class="age-card__photo" src="images/generated/grade-2-4-ai.jpg" alt="AIでアイデアを形にする小学2年生から4年生"/>
+        <div class="age-card__body">
+          <div class="age-card__num">CURRICULUM 02</div>
+          <div class="age-card__age">2–4<small>年生</small></div>
+          <h3 class="age-card__title">「好き」が、<br/>未来のチカラになる。</h3>
+          <p class="age-card__desc">好きなことをきっかけに、<br>自分で考え工夫する力を伸ばします。</p>
+          <a class="age-card__link" href="about.html#grade-2-4">詳細を見る →</a>
+        </div>
+      </article>
+
+      <article class="age-card reveal">
+        <img class="age-card__photo" src="images/generated/grade-5-ai.jpg" alt="AIを使って自分の考えを発信する小学5年生から6年生"/>
+        <div class="age-card__body">
+          <div class="age-card__num">CURRICULUM 03</div>
+          <div class="age-card__age">5–6<small>年生</small></div>
+          <h3 class="age-card__title">自分の可能性を、<br/>未来へつなぐ。</h3>
+          <p class="age-card__desc">課題解決にAIを活かし、<br>自分の考えを発信する力を育てます。</p>
+          <a class="age-card__link" href="about.html#grade-5">詳細を見る →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillars__head reveal">
+      <span class="eyebrow">Why SIGNON</span>
+      <h2 class="h-section" style="margin-top: 16px;">SIGNONが大切にしている、<br/>3つのこと。</h2>
+    </div>
+
+    <div class="pillars__grid">
+      <div class="pillar reveal">
+        <img class="pillar__img" src="images/generated/grade-2-4-ai.jpg" alt="楽しみながら自然と学ぶ子どもたち"/>
+        <div class="pillar__body">
+          <div class="pillar__num">01 / Joy</div>
+          <h3 class="pillar__title">楽しみながら、<br/>自然と学べる</h3>
+          <p class="pillar__desc">ゲーム感覚でAIに触れ、「難しい」から「楽しい」に変わる体験をつくります。</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <img class="pillar__img" src="images/generated/grade-5-ai.jpg" alt="小さな頃から創造力を身につける子どもたち"/>
+        <div class="pillar__body">
+          <div class="pillar__num">02 / Future</div>
+          <h3 class="pillar__title">小さな頃から<br/>身につける創造力</h3>
+          <p class="pillar__desc">AI活用力を早くから育て、未来の学びにつながる基礎を築きます。</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <img class="pillar__img" src="images/generated/about-cover-ai.jpg" alt="好きなことでつながる仲間づくり"/>
+        <div class="pillar__body">
+          <div class="pillar__num">03 / Friends</div>
+          <h3 class="pillar__title">好きなことで<br/>つながる仲間づくり</h3>
+          <p class="pillar__desc">興味の近い仲間と出会い、表現し合いながら成長できます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="make" id="outputs">
+  <div class="wrap">
+    <div class="make__head reveal">
+      <span class="eyebrow">Creative outputs</span>
+      <h2 class="h-section" style="margin-top: 16px;">AIでつくれるもの</h2>
+      <p class="lead" style="margin: 18px auto 0; max-width: 720px;">画像・動画・資料・アプリづくりを通して、AIを使うだけでなく、自分の考えを形にする力を育てます。</p>
+    </div>
+    <div class="make__grid">
+      <div class="make-card reveal"><div class="make-card__badgeicon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><rect x="9" y="12" width="30" height="24" rx="5"/><path d="m14 31 8-8 6 6 4-4 5 6"/><circle cx="30" cy="19" r="2.5"/></svg></div><p class="make-card__label">Image</p><div class="make-card__name">画像をつくる</div><p class="make-card__desc">頭の中の世界を、色・雰囲気・構図まで言葉にしてAIに伝えます。</p><div class="make-card__learn">身につく力：言語化する力・表現力</div></div>
+      <div class="make-card reveal"><div class="make-card__badgeicon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="21" rx="5"/><path d="m21 21 9 4-9 5V21Z"/><path d="M13 10v5M24 10v5M35 10v5"/></svg></div><p class="make-card__label">Movie</p><div class="make-card__name">動画をつくる</div><p class="make-card__desc">場面の流れや見せたい順番を考え、短いストーリーとして組み立てます。</p><div class="make-card__learn">身につく力：構成力・想像力</div></div>
+      <div class="make-card reveal"><div class="make-card__badgeicon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="22" rx="4"/><path d="M16 25v-6M24 25V16M32 25v-3M17 39h14M24 32v7"/></svg></div><p class="make-card__label">Slides</p><div class="make-card__name">資料をつくる</div><p class="make-card__desc">調べたことや考えを、相手に伝わる順番・見せ方に整理します。</p><div class="make-card__learn">身につく力：伝える力・情報整理力</div></div>
+      <div class="make-card reveal"><div class="make-card__badgeicon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><rect x="10" y="9" width="28" height="30" rx="6"/><path d="M18 17h12M18 24h7M18 31h12"/><path d="m31 23 4 4-4 4"/></svg></div><p class="make-card__label">App</p><div class="make-card__name">アプリやゲームをつくる</div><p class="make-card__desc">動かして試しながら、うまくいかない理由を考えて改善します。</p><div class="make-card__learn">身につく力：論理的思考・試行錯誤</div></div>
+      <div class="make-card reveal"><div class="make-card__badgeicon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><path d="M13 14h22a5 5 0 0 1 5 5v9a5 5 0 0 1-5 5H24l-9 6v-6h-2a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Z"/><path d="M18 23h12M18 28h7"/><path d="m34 9 1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3Z"/></svg></div><p class="make-card__label">Present</p><div class="make-card__name">作品を発表する</div><p class="make-card__desc">作ったものにタイトルや説明を添え、工夫した点を自分の言葉で伝えます。</p><div class="make-card__learn">身につく力：発表力・主体性</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta__inner">
+    <div class="reveal">
+      <span class="eyebrow" style="color: var(--coral);">Free trial</span>
+      <h2 class="cta__title">まずは、<br/>無料体験から。</h2>
+      <p class="cta__sub">お子さまの「やってみたい」を、AIといっしょに形にする。<br/>SIGNONの授業を無料でご体験いただけます。</p>
+      <div class="cta__cta">
+        <a href="https://lin.ee/rTMgnyl" class="btn btn--primary">無料体験に申込 <span class="arrow">→</span></a>
+        <a href="https://lin.ee/9FFK1Oe" class="line-add" target="_blank" rel="noopener" aria-label="LINEで友だち追加"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" /></a>
+        <a href="school.html#curriculum" class="btn btn--ghost">カリキュラムをみる</a>
+      </div>
+    </div>
+    <div class="cta__phone reveal">
+      お問い合わせ
+      <strong>03-5309-2591</strong>
+      <span style="display:block; margin-top: 8px;">平日 10:00 – 18:00</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><img class="brand__logo" src="images/logo.svg" alt="SIGNON" /></div>
+        <p class="footer__tag">小学生のためのAIスクール。<br/>"考える力・伝える力"を、AIとともに育てます。</p>
+      </div>
+      <div class="footer__col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">SIGNONとは</a></li>
+          <li><a href="school.html">スクールについて</a></li>
+          <li><a href="experience.html">体験について</a></li>
+          <li><a href="https://lin.ee/rTMgnyl">体験申込</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p class="footer__address">
+          東京都港区虎ノ門３丁目<br/>
+          ８－２６巴町アネックス５Ｆ<br/><br/>
+          03-5309-2591
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 SIGNON Inc.</span>
+      <span>Planet textures: <a href="https://www.solarsystemscope.com/textures/" target="_blank" rel="noopener" style="text-decoration:underline;">Solar System Scope</a> (CC BY 4.0) ・ An AI school for primary kids — Tokyo</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="vendor/three146.min.js"></script>
+<script src="vendor/GLTFLoader.js"></script>
+<script src="tree-hero.js?v=mob-2"></script>
+<script src="shared.js?v=design-polish-20260607"></script>
+</body>
+</html>

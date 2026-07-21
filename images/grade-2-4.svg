@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgG2" cx="50%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#D6D8EE"></stop>
+      <stop offset="100%" stop-color="#EDE5D2"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="640" fill="url(#bgG2)"></rect>
+  
+  <ellipse cx="400" cy="580" rx="380" ry="40" fill="#1A1A1A" opacity="0.06"></ellipse>
+  
+  <g transform="translate(400 280)">
+    <rect x="-180" y="-110" width="360" height="220" rx="12" fill="#1A1A1A"></rect>
+    <rect x="-170" y="-100" width="340" height="200" rx="4" fill="#7B82C9"></rect>
+    
+    <g font-family="monospace" font-size="13" fill="#F5EFE3">
+      <rect x="-160" y="-90" width="220" height="6" rx="2" opacity="0.55"></rect>
+      <rect x="-160" y="-72" width="160" height="6" rx="2" opacity="0.55"></rect>
+      <rect x="-140" y="-54" width="180" height="6" rx="2" opacity="0.45"></rect>
+      <rect x="-140" y="-36" width="120" height="6" rx="2" opacity="0.45"></rect>
+      <rect x="-160" y="-18" width="200" height="6" rx="2" opacity="0.55"></rect>
+      <rect x="-140" y="0" width="150" height="6" rx="2" opacity="0.45"></rect>
+      <rect x="-160" y="18" width="180" height="6" rx="2" opacity="0.55"></rect>
+    </g>
+    
+    <rect x="20" y="-50" width="130" height="80" rx="10" fill="#E26D5A"></rect>
+    <path d="M 30 30 L 38 42 L 46 30 Z" fill="#E26D5A"></path>
+    <text x="30" y="-30" font-family="monospace" font-size="11" fill="#F5EFE3">AI:</text>
+    <text x="30" y="-12" font-family="monospace" font-size="11" fill="#F5EFE3">good idea!</text>
+    <text x="30" y="6" font-family="monospace" font-size="11" fill="#F5EFE3">try blue</text>
+    
+    <rect x="-30" y="110" width="60" height="14" fill="#EDE5D2"></rect>
+    <rect x="-90" y="124" width="180" height="10" rx="3" fill="#EDE5D2"></rect>
+  </g>
+  
+  
+    <g transform="translate(240 460)">
+      <ellipse cx="0" cy="-25" rx="48" ry="56" fill="#1A1A1A"></ellipse>
+      <circle cx="0" cy="-15" r="42" fill="#E8B58A"></circle>
+      <path d="M -42 -18 Q -36 -55 0 -55 Q 36 -55 42 -18 Q 22 -32 0 -30 Q -22 -32 -42 -18 Z" fill="#1A1A1A"></path>
+      <circle cx="-14" cy="-8" r="4" fill="#1A1A1A"></circle>
+      <circle cx="14" cy="-8" r="4" fill="#1A1A1A"></circle>
+      <path d="M -10 6 Q 0 14 10 6" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" fill="none"></path>
+      <circle cx="-22" cy="3" r="6" fill="#E26D5A" opacity="0.5"></circle>
+      <circle cx="22" cy="3" r="6" fill="#E26D5A" opacity="0.5"></circle>
+      <path d="M -45 30 Q -65 60 -68 130 L 68 130 Q 65 60 45 30 Q 22 42 0 42 Q -22 42 -45 30 Z" fill="#E26D5A"></path>
+    </g>
+  
+    <g transform="translate(560 460)">
+      <ellipse cx="0" cy="-25" rx="48" ry="56" fill="#3A2B1F"></ellipse>
+      <circle cx="0" cy="-15" r="42" fill="#F0C9A0"></circle>
+      <path d="M -42 -18 Q -36 -55 0 -55 Q 36 -55 42 -18 Q 22 -32 0 -30 Q -22 -32 -42 -18 Z" fill="#3A2B1F"></path>
+      <circle cx="-14" cy="-8" r="4" fill="#1A1A1A"></circle>
+      <circle cx="14" cy="-8" r="4" fill="#1A1A1A"></circle>
+      <path d="M -10 6 Q 0 14 10 6" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" fill="none"></path>
+      <circle cx="-22" cy="3" r="6" fill="#E26D5A" opacity="0.5"></circle>
+      <circle cx="22" cy="3" r="6" fill="#E26D5A" opacity="0.5"></circle>
+      <path d="M -45 30 Q -65 60 -68 130 L 68 130 Q 65 60 45 30 Q 22 42 0 42 Q -22 42 -45 30 Z" fill="#5BAF7E"></path>
+    </g>
+  
+  
+  <rect x="120" y="540" width="560" height="14" rx="4" fill="#3D3733"></rect>
+  
+  <g fill="#E26D5A">
+    <path d="M 100 200 L 105 212 L 117 217 L 105 222 L 100 234 L 95 222 L 83 217 L 95 212 Z"></path>
+    <path d="M 700 180 L 705 192 L 717 197 L 705 202 L 700 214 L 695 202 L 683 197 L 695 192 Z"></path>
+  </g>
+</svg>

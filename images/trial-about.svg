@@ -1,0 +1,44 @@
+<svg viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgTA" cx="50%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#F8D5CB"></stop>
+      <stop offset="100%" stop-color="#EDE5D2"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgTA)"></rect>
+  
+  <g transform="translate(300 250)">
+    <ellipse cx="0" cy="0" rx="200" ry="140" fill="#F5EFE3" stroke="#1A1A1A" stroke-width="3"></ellipse>
+    <path d="M -40 130 L -20 175 L 10 130 Z" fill="#F5EFE3" stroke="#1A1A1A" stroke-width="3"></path>
+    <path d="M -40 130 L 10 130" stroke="#F5EFE3" stroke-width="5"></path>
+    <text x="0" y="-30" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="22" fill="#1A1A1A">「いっしょに</text>
+    <text x="0" y="0" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="22" fill="#E26D5A">考えてくれる</text>
+    <text x="0" y="30" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="22" fill="#1A1A1A">あいて」だよ</text>
+    <text x="0" y="65" text-anchor="middle" font-family="monospace" font-size="11" fill="#3D3733">— SIGNON</text>
+  </g>
+  
+  <g transform="translate(300 580)">
+    
+    <path d="M -65 0 Q -85 30 -90 140 L 90 140 Q 85 30 65 0 Q 35 12 0 12 Q -35 12 -65 0 Z" fill="#7B82C9"></path>
+    
+    <ellipse cx="0" cy="-60" rx="55" ry="65" fill="#1A1A1A"></ellipse>
+    <circle cx="0" cy="-50" r="45" fill="#F0C9A0"></circle>
+    <path d="M -45 -55 Q -38 -100 0 -100 Q 38 -100 45 -55 Q 25 -75 0 -73 Q -25 -75 -45 -55 Z" fill="#1A1A1A"></path>
+    <circle cx="-15" cy="-42" r="4" fill="#1A1A1A"></circle>
+    <circle cx="15" cy="-42" r="4" fill="#1A1A1A"></circle>
+    <path d="M -10 -24 Q 0 -16 10 -24" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" fill="none"></path>
+    <circle cx="-26" cy="-32" r="6" fill="#E26D5A" opacity="0.5"></circle>
+    <circle cx="26" cy="-32" r="6" fill="#E26D5A" opacity="0.5"></circle>
+    
+    <path d="M -65 35 Q -110 0 -100 -60" stroke="#F0C9A0" stroke-width="22" stroke-linecap="round" fill="none"></path>
+    <circle cx="-103" cy="-65" r="14" fill="#F0C9A0"></circle>
+  </g>
+  
+  <g fill="#E26D5A">
+    <path d="M 80 120 L 86 134 L 100 140 L 86 146 L 80 160 L 74 146 L 60 140 L 74 134 Z"></path>
+    <path d="M 500 400 L 505 412 L 517 417 L 505 422 L 500 434 L 495 422 L 483 417 L 495 412 Z"></path>
+  </g>
+  <g fill="#7B82C9">
+    <path d="M 510 100 L 516 114 L 530 120 L 516 126 L 510 140 L 504 126 L 490 120 L 504 114 Z"></path>
+  </g>
+</svg>

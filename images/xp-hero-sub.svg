@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="完成した作品を見せる子ども">
+  <defs>
+    <radialGradient id="sb1" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#8A8FD9" stop-opacity=".5"></stop>
+      <stop offset="100%" stop-color="#EFE8D8"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#sb1)"></rect>
+
+  
+  <g transform="translate(110,60)">
+    <rect x="0" y="0" width="180" height="130" rx="12" fill="#1F1B16"></rect>
+    <rect x="8" y="8" width="164" height="114" rx="6" fill="#F6F1E7"></rect>
+    
+    <circle cx="60" cy="55" r="22" fill="#E07856"></circle>
+    <rect x="92" y="35" width="60" height="40" rx="8" fill="#8A8FD9"></rect>
+    <path d="M30 100 Q60 75 90 100 T150 100" stroke="#B85636" stroke-width="4" fill="none" stroke-linecap="round"></path>
+    <circle cx="40" cy="90" r="5" fill="#1F1B16"></circle>
+    <circle cx="130" cy="55" r="6" fill="#F6F1E7"></circle>
+  </g>
+
+  
+  <g transform="translate(140,180)">
+    <circle cx="60" cy="0" r="34" fill="#F0C8AB"></circle>
+    <path d="M26 0 Q26 -42 60 -42 Q98 -42 98 0 Q90 -18 72 -18 Q58 -10 40 -14 Q32 -10 28 6 Z" fill="#1F1B16"></path>
+    <circle cx="48" cy="6" r="3" fill="#1F1B16"></circle>
+    <circle cx="72" cy="6" r="3" fill="#1F1B16"></circle>
+    <path d="M48 18 Q60 26 72 18" stroke="#1F1B16" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+    <circle cx="44" cy="14" r="3" fill="#E07856" opacity=".5"></circle>
+    <circle cx="76" cy="14" r="3" fill="#E07856" opacity=".5"></circle>
+    
+    <path d="M-10 120 Q-10 50 60 50 Q130 50 130 120 Z" fill="#8A8FD9"></path>
+  </g>
+
+  
+  <path d="M40 40 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3 z" fill="#B85636"></path>
+  <path d="M340 230 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3 z" fill="#E07856"></path>
+</svg>

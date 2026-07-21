@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>サイノーンについて｜SIGNON</title>
+<meta name="description" content="SIGNON（サイノーン）は、小学生向けのAIスクール。楽しみながら&quot;考える力・伝える力&quot;を育て、未来の基礎力を養います。" />
+<link rel="stylesheet" href="styles.css?v=mobile-linebreak-20260606" />
+<style>
+  /* ===== About-only styles ===== */
+  .about-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(50px, 6vw, 80px);
+    position: relative;
+  }
+  .about-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: end; }
+  .about-hero__title { margin: 18px 0 0; }
+  .about-hero__lead { margin-top: 28px; color: var(--ink-soft); font-size: clamp(15px, 1.3vw, 17px); line-height: 1.95; }
+  .about-hero__visual { aspect-ratio: 5/4; }
+  @media (max-width: 900px) { .about-hero__inner { grid-template-columns: 1fr; } }
+
+  /* Manifesto */
+  .manifesto { padding: clamp(70px, 9vw, 120px) 0; }
+  .manifesto__inner { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; align-items: start; }
+  .manifesto__label { position: sticky; top: 100px; }
+  .manifesto__big {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(28px, 3.4vw, 42px); line-height: 1.5; letter-spacing: -0.005em;
+    margin: 0;
+  }
+  .manifesto__big em { font-style: normal; color: var(--coral-deep); }
+  .manifesto__body { margin-top: 36px; font-size: 16px; line-height: 2; color: var(--ink-soft); }
+  .manifesto__body p { margin: 0 0 22px; }
+  @media (max-width: 900px) { .manifesto__inner { grid-template-columns: 1fr; gap: 40px; } .manifesto__label { position: static; } }
+
+  /* Grade section */
+  .grade {
+    padding: clamp(80px, 9vw, 120px) 0;
+    border-top: 1px solid var(--line);
+  }
+  .grade--alt { background: var(--cream-2); }
+  .grade__head { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 60px; margin-bottom: 64px; align-items: end; }
+  .grade__num {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em;
+    color: var(--coral-deep); text-transform: uppercase;
+  }
+  .grade__age {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(72px, 11vw, 132px); line-height: 0.9; letter-spacing: -0.02em;
+    margin: 16px 0 0;
+  }
+  .grade__age small { display: block; font-size: clamp(18px, 1.6vw, 22px); font-weight: 700; color: var(--ink-soft); margin-top: 14px; letter-spacing: 0; }
+  .grade__title-wrap h2 { margin-bottom: 24px; }
+  .grade__title-wrap p { font-size: clamp(15px, 1.3vw, 17px); line-height: 2; color: var(--ink-soft); margin: 0; }
+
+  .grade__body { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .grade__visual { aspect-ratio: 4/3; position: sticky; top: 100px; }
+  .grade__points { display: grid; gap: 28px; }
+  .point {
+    background: var(--cream);
+    border: 1px solid var(--line); border-radius: var(--r-lg);
+    padding: 28px 32px;
+    display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start;
+    transition: transform .25s, border-color .25s;
+  }
+  .grade--alt .point { background: var(--cream); }
+  .point:hover { transform: translateY(-3px); border-color: var(--coral); }
+  .point__num {
+    font-family: var(--font-display); font-weight: 900; font-size: 28px;
+    width: 54px; height: 54px; border-radius: 14px;
+    display: grid; place-items: center;
+    background: var(--coral-soft); color: var(--coral-deep);
+    line-height: 1;
+  }
+  .grade--blue .point__num { background: var(--peri-soft); color: var(--peri-deep); }
+  .point__title { font-family: var(--font-display); font-weight: 700; font-size: 19px; line-height: 1.4; margin: 0 0 10px; }
+  .point__desc { font-size: 14px; line-height: 1.85; color: var(--ink-soft); margin: 0; }
+
+  .grade__cta-wrap { margin-top: 56px; display: flex; justify-content: center; }
+
+  @media (max-width: 900px) {
+    .grade__head { grid-template-columns: 1fr; gap: 24px; }
+    .grade__body { grid-template-columns: 1fr; gap: 40px; }
+    .grade__visual { position: static; }
+  }
+
+  /* Trial promo strip */
+  .promo {
+    margin: 0 var(--pad-x);
+    background: var(--ink); color: var(--cream);
+    border-radius: var(--r-xl);
+    padding: clamp(48px, 6vw, 72px);
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .promo::before { content: ""; position: absolute; bottom: -120px; left: -100px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, var(--peri) 0%, transparent 70%); opacity: .55; }
+  .promo > * { position: relative; z-index: 1; }
+  .promo__title { font-family: var(--font-display); font-weight: 900; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.2; margin: 14px 0; }
+  .promo__sub { color: color-mix(in oklch, var(--cream) 75%, transparent); font-size: 15px; line-height: 1.85; }
+  .promo__btn { justify-self: end; }
+  @media (max-width: 800px) { .promo { grid-template-columns: 1fr; } .promo__btn { justify-self: start; } }
+
+  /* ===== About page refreshed from reference ===== */
+  :root {
+    --about-blue: #075eb8;
+    --about-blue-2: #0b86d8;
+    --about-sky: #eaf8ff;
+    --about-green: #24c264;
+    --about-orange: #ff7a2f;
+    --about-card: rgba(255,255,255,.9);
+    --about-shadow: 0 22px 64px -36px rgba(5, 94, 184, .38);
+  }
+  body {
+    background:
+      radial-gradient(circle at 6% 12%, rgba(87, 199, 255, .24), transparent 26%),
+      radial-gradient(circle at 92% 24%, rgba(255, 196, 119, .16), transparent 28%),
+      linear-gradient(180deg, #f7fcff 0%, #eefaff 42%, #fffaf4 100%);
+  }
+  .nav {
+    background: rgba(255,255,255,.86);
+    border-bottom: 1px solid rgba(7,94,184,.1);
+    box-shadow: 0 10px 34px -30px rgba(7,94,184,.35);
+  }
+  .brand { color: var(--about-blue); font-size: 25px; }
+  .brand__mark {
+    background: linear-gradient(135deg, #48bcff, var(--about-blue));
+    border-radius: 12px;
+  }
+  .nav__links { gap: 30px; font-weight: 800; }
+  .nav__links a.is-current::after { background: var(--about-orange); height: 3px; }
+  .nav__cta {
+    background: var(--about-orange);
+    color: white;
+    padding: 14px 22px;
+    box-shadow: 0 12px 28px -14px var(--about-orange);
+  }
+  .about-v2-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(42px, 6vw, 82px) 0 clamp(52px, 7vw, 96px);
+    background:
+      radial-gradient(circle at 18% 24%, rgba(112, 210, 255, .28), transparent 26%),
+      linear-gradient(90deg, rgba(255,255,255,.95), rgba(231,248,255,.85));
+  }
+  .about-v2-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(480px, 1fr) minmax(430px, 1fr);
+    gap: clamp(34px, 5vw, 72px);
+    align-items: center;
+  }
+  .breadcrumb {
+    color: #4a789c;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    margin-bottom: 40px;
+  }
+  .about-v2-title {
+    margin: 0;
+    color: var(--about-blue);
+    font-family: var(--font-display);
+    font-size: clamp(46px, 5.2vw, 72px);
+    line-height: 1.12;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  .about-v2-subtitle {
+    margin: 24px 0 0;
+    color: #17355b;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(22px, 2.1vw, 30px);
+    line-height: 1.55;
+  }
+  .about-v2-lead {
+    margin: 26px 0 34px;
+    color: #31536a;
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 600;
+  }
+  .about-v2-visual {
+    position: relative;
+    min-height: 420px;
+    border-radius: 46% 0 0 46%;
+    overflow: hidden;
+    box-shadow: var(--about-shadow);
+  }
+  .about-v2-visual img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
+  .about-v2-section { padding: clamp(58px, 8vw, 104px) 0; }
+  .about-v2-heading {
+    margin: 0 0 16px;
+    color: var(--about-blue);
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.25;
+  }
+  .goal-lead {
+    max-width: 600px;        /* 幅を絞って改行位置を自然に */
+    margin: 0 auto 38px;
+    text-align: center;
+    color: #4f657a;
+    font-size: clamp(15px, 1.35vw, 17px);
+    line-height: 2.0;
+    font-weight: 700;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .goal-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .goal-card {
+    min-height: 230px;
+    padding: 26px 20px 24px;  /* 内側余白を少し広げる */
+    border-radius: 20px;
+    background: var(--about-card);
+    border: 1px solid rgba(7,94,184,.11);
+    box-shadow: var(--about-shadow);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .goal-card__icon {
+    width: 56px; height: 56px; border-radius: 18px;
+    display: grid; place-items: center;
+    background:
+      radial-gradient(circle at 30% 24%, rgba(255,255,255,.95), transparent 38%),
+      linear-gradient(145deg, #f2fbff 0%, #e8f4ff 100%);
+    color: var(--about-blue);
+    border: 1px solid rgba(7,94,184,.14);
+    box-shadow: inset 0 -8px 18px rgba(7,94,184,.08), 0 16px 34px -28px rgba(7,94,184,.55);
+  }
+  .goal-card__icon .sig-icon { width: 30px; height: 30px; }
+  .goal-card__title { font-weight: 900; color: #17355b; line-height: 1.55; font-size: 15.5px; text-wrap: balance; }
+  .goal-card__text { color: #52697d; line-height: 1.82; font-size: 13px; font-weight: 700; text-wrap: pretty; }
+  .why-box {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 34px;
+    align-items: center;
+    padding: clamp(28px, 4vw, 46px);
+    border-radius: 30px;
+    background: linear-gradient(90deg, rgba(235,248,255,.9), rgba(255,255,255,.92));
+    box-shadow: var(--about-shadow);
+    border: 1px solid rgba(7,94,184,.1);
+  }
+  .why-box h2 {
+    color: var(--about-blue);
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3.2vw, 42px);
+    line-height: 1.35;
+    margin: 0 0 20px;
+  }
+  .why-box p { color: #31536a; line-height: 2; font-weight: 600; }
+  .why-box img { width: 100%; border-radius: 24px; box-shadow: 0 18px 44px -28px rgba(7,94,184,.35); }
+  .feature-band {
+    padding: clamp(34px, 5vw, 54px);
+    border-radius: 30px;
+    background: linear-gradient(90deg, #fff8e9, #effaff);
+    box-shadow: var(--about-shadow);
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .feature-card {
+    padding: 20px 18px;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid rgba(7,94,184,.1);
+    box-shadow: 0 16px 40px -32px rgba(7,94,184,.35);
+  }
+  .feature-card h3 { margin: 0 0 10px; color: #17355b; font-size: 15.5px; line-height: 1.55; text-wrap: balance; }
+  .feature-card p { margin: 0 0 14px; color: #456276; font-size: 12.5px; line-height: 1.85; text-wrap: pretty; }
+  .feature-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-top: 4px; }
+  .parent-box {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(28px, 4vw, 46px);
+    border-radius: 28px;
+    background: rgba(255,255,255,.82);
+    box-shadow: var(--about-shadow);
+    border: 1px solid rgba(7,94,184,.1);
+  }
+  .parent-box h2 { margin: 0 0 18px; color: var(--about-blue); font-family: var(--font-display); font-size: clamp(24px, 3vw, 38px); }
+  .parent-box p { color: #31536a; line-height: 2; font-weight: 600; }
+  .about-v2-cta {
+    margin: 0 var(--pad-x) clamp(54px, 7vw, 88px);
+    border-radius: 30px;
+    background: linear-gradient(90deg, #dff6ff, #fff0e5);
+    box-shadow: var(--about-shadow);
+    padding: clamp(28px, 4vw, 48px);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 26px;
+    align-items: center;
+  }
+  .about-v2-cta h2 { margin: 0; color: var(--about-blue); font-size: clamp(24px, 3vw, 38px); line-height: 1.4; }
+  .about-v2-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+  .line-add {
+    border: 2px solid var(--about-green);
+    border-radius: 999px;
+    background: white;
+    padding: 10px 18px;
+    color: #12a84d;
+    font-weight: 900;
+  }
+  .line-add img { display: none; }
+  .line-add::before { content: "LINEで相談する"; }
+  .btn--primary {
+    background: var(--about-orange);
+    color: white;
+    box-shadow: 0 16px 30px -16px var(--about-orange);
+  }
+  .btn--ghost {
+    border-color: var(--about-blue);
+    color: var(--about-blue);
+    background: white;
+  }
+  @media (max-width: 980px) {
+    .about-v2-hero__inner,
+    .why-box,
+    .about-v2-cta { grid-template-columns: 1fr; }
+    .about-v2-title { white-space: normal; }
+    .about-v2-visual { border-radius: 28px; min-height: 320px; }
+    .about-v2-visual img { min-height: 320px; }
+    .goal-grid,
+    .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-v2-actions { justify-content: flex-start; }
+  }
+  @media (max-width: 620px) {
+    .goal-grid,
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<link rel="stylesheet" href="nav.css?v=mobile-linebreak-20260606" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html"><img class="brand__logo" src="images/logo.svg" alt="SIGNON" /></a>
+    <div class="nav__links">
+      <a href="index.html">ホーム</a>
+      <a href="about.html" class="is-current">SIGNONとは</a>
+      <a href="school.html">スクールについて</a>
+      <a href="experience.html">体験について</a>
+      <a href="https://lin.ee/rTMgnyl" class="nav__cta">体験申込 →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="about-v2-hero">
+  <div class="wrap about-v2-hero__inner">
+    <div>
+      <div class="breadcrumb">トップ　&gt;　SIGNONとは</div>
+      <h1 class="about-v2-title">SIGNONとは</h1>
+      <p class="about-v2-subtitle">AIとともに表現力を伸ばす<br/>小学生のためのAI活用型スクール</p>
+      <p class="about-v2-lead">SIGNON（サイノーン）は、AIを「使う」だけでなく、<br/>対話し、考え、創り出すことを通して、<br/>子どもたちの表現力を伸ばす新しい学びの場です。</p>
+      <a href="https://lin.ee/rTMgnyl" class="btn btn--ghost">無料体験で体験してみる <span class="arrow">→</span></a>
+    </div>
+    <div class="about-v2-visual reveal">
+      <img src="images/generated/about-cover-ai.jpg" alt="タブレットでAIを活用して学ぶ小学生"/>
+    </div>
+  </div>
+</header>
+
+<section class="about-v2-section">
+  <div class="wrap">
+    <h2 class="about-v2-heading">SIGNONが目指すこと</h2>
+    <p class="goal-lead">AIを使いこなす前に、自分で考える力を育てる。<br>SIGNONは、AIを答えの機械ではなく、<br>考えを広げるパートナーとして活用します。</p>
+    <div class="goal-grid">
+      <div class="goal-card reveal"><div class="goal-card__icon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><path d="M9 13h22a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6H20l-9 7v-7H9a6 6 0 0 1-6-6v-5a6 6 0 0 1 6-6Z"/><path d="M17 21h13M17 26h8"/></svg></div><div class="goal-card__title">AIと対話する</div><div class="goal-card__text">答えをもらうだけでなく、問いを深める相手としてAIを使います。</div></div>
+      <div class="goal-card reveal"><div class="goal-card__icon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M19 19a5 5 0 0 1 10 1c0 5-5 5-5 9"/><path d="M24 35h.1"/></svg></div><div class="goal-card__title">正解のない問いに<br>向き合う</div><div class="goal-card__text">ひとつの答えを探すより、自分なりの考えを育てます。</div></div>
+      <div class="goal-card reveal"><div class="goal-card__icon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><rect x="9" y="12" width="30" height="24" rx="5"/><path d="m14 31 8-8 6 6 4-4 5 6"/><circle cx="30" cy="19" r="2.5"/></svg></div><div class="goal-card__title">考えを形にする</div><div class="goal-card__text">画像・動画・資料・アプリなど、アイデアを作品にします。</div></div>
+      <div class="goal-card reveal"><div class="goal-card__icon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><circle cx="24" cy="16" r="7"/><path d="M11 40c2-9 7-14 13-14s11 5 13 14"/><path d="m36 9 2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1 2-4Z"/></svg></div><div class="goal-card__title">自分らしさを大切にする</div><div class="goal-card__text">AIの案をそのまま使わず、好きや感性で選ぶ力を育てます。</div></div>
+      <div class="goal-card reveal"><div class="goal-card__icon" aria-hidden="true"><svg class="sig-icon" viewBox="0 0 48 48"><path d="M24 6v36"/><path d="M10 32c10 0 14-7 14-16 0 9 4 16 14 16"/><path d="M12 14c5 0 9 4 12 10 3-6 7-10 12-10"/></svg></div><div class="goal-card__title">未来をつくる力を育てる</div><div class="goal-card__text">創造力・判断力・表現力を、これからの社会で使える力へ伸ばします。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-v2-section">
+  <div class="wrap why-box reveal">
+    <div>
+      <h2>なぜ今、AIを学ぶのか</h2>
+      <p>AIはこれからの社会で、さまざまな場面に関わっていきます。大切なのは、AIの技術そのものではなく、AIを使って「何を考え、どう表現し、どう生きていくか」。子どもたちが未来を切り拓くために、AIは強力なパートナーになります。</p>
+      <a href="school.html#curriculum" class="btn btn--ghost">未来に必要な力とは？ <span class="arrow">→</span></a>
+    </div>
+    <img src="images/generated/kids-tablet-ai.jpg" alt="AIを使って学ぶ子どもたち"/>
+  </div>
+</section>
+
+<section class="about-v2-section">
+  <div class="wrap feature-band">
+    <h2 class="about-v2-heading">SIGNONの学びの特徴</h2>
+    <div class="feature-grid">
+      <article class="feature-card reveal"><h3>対話を通して学ぶ</h3><p>AIとの対話を通じて、自分の考えを整理し、深めていきます。</p><img src="images/generated/about-cover-ai.jpg" alt="AIと対話して学ぶ子ども"/></article>
+      <article class="feature-card reveal"><h3>自分の「好き」を大切に</h3><p>子どもの興味や関心からテーマを選び、主体的に学びます。</p><img src="images/generated/grade-1-ai.jpg" alt="好きなことをAIで形にする子ども"/></article>
+      <article class="feature-card reveal"><h3>表現する力を伸ばす</h3><p>言葉・絵・デザインなど、さまざまな方法で表現します。</p><img src="images/generated/grade-2-4-ai.jpg" alt="作品づくりに取り組む子どもたち"/></article>
+      <article class="feature-card reveal"><h3>安心・安全の環境</h3><p>AIの適切な使い方や情報との向き合い方も学びます。</p><img src="images/generated/classroom-ai.jpg" alt="明るい教室でAIを学ぶ子どもたち"/></article>
+      <article class="feature-card reveal"><h3>少人数サポート体制</h3><p>一人ひとりに寄り添い、講師が丁寧にサポートします。</p><img src="images/generated/grade-5-ai.jpg" alt="講師と一緒にAIを学ぶ小学生"/></article>
+    </div>
+  </div>
+</section>
+
+<section class="about-v2-section">
+  <div class="wrap parent-box reveal">
+    <div>
+      <h2>保護者の方へ</h2>
+      <p>AIを使うことに不安を感じる保護者の方も多いかもしれません。SIGNONでは、AIの可能性を正しく理解し、子どもたちが安心して学べる環境を整えています。無料体験では、学びの内容や進め方を丁寧にご説明します。</p>
+      <a href="school.html#faq" class="btn btn--ghost">よくある質問を見る <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="about-v2-cta reveal">
+  <h2>まずは無料体験で、<br/>SIGNONの学びを体験してみませんか？</h2>
+  <div class="about-v2-actions">
+    <a href="https://lin.ee/rTMgnyl" class="btn btn--primary">無料体験に申し込む <span class="arrow">→</span></a>
+    <a href="https://lin.ee/9FFK1Oe" class="line-add" target="_blank" rel="noopener" aria-label="LINEで相談する"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" /></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><img class="brand__logo" src="images/logo.svg" alt="SIGNON" /></div>
+        <p class="footer__tag">小学生のためのAIスクール。<br/>"考える力・伝える力"を、AIとともに育てます。</p>
+      </div>
+      <div class="footer__col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">SIGNONとは</a></li>
+          <li><a href="school.html">スクールについて</a></li>
+          <li><a href="experience.html">体験について</a></li>
+          <li><a href="https://lin.ee/rTMgnyl">体験申込</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p class="footer__address">
+          東京都港区虎ノ門３丁目<br/>
+          ８－２６巴町アネックス５Ｆ<br/><br/>
+          03-5309-2591
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 SIGNON Inc.</span>
+      <span>An AI school for primary kids — Tokyo</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js?v=design-polish-20260607"></script>
+</body>
+</html>

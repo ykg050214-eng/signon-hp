@@ -1,0 +1,79 @@
+<svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad2" cx="70%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#D6D8EE"></stop>
+      <stop offset="60%" stop-color="#EDE5D2"></stop>
+      <stop offset="100%" stop-color="#EDE5D2"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="640" fill="url(#bgGrad2)"></rect>
+  
+  <rect x="120" y="80" width="560" height="220" rx="6" fill="#F5EFE3" stroke="#1A1A1A" stroke-width="3"></rect>
+  <rect x="120" y="80" width="560" height="22" rx="6" fill="#E26D5A"></rect>
+  
+  <text x="160" y="155" font-family="sans-serif" font-weight="900" font-size="36" fill="#1A1A1A">SIGNON</text>
+  <text x="160" y="195" font-family="monospace" font-size="14" fill="#3D3733">// 才能に、スイッチを。</text>
+  <g stroke="#7B82C9" stroke-width="3" fill="none">
+    <circle cx="500" cy="180" r="40"></circle>
+    <path d="M 500 140 L 500 220 M 460 180 L 540 180"></path>
+  </g>
+  <circle cx="580" cy="160" r="14" fill="#E26D5A"></circle>
+  <rect x="555" y="195" width="50" height="50" fill="#5BAF7E" rx="8"></rect>
+  
+  <g>
+    <rect x="100" y="400" width="180" height="14" rx="4" fill="#3D3733"></rect>
+    <rect x="115" y="414" width="10" height="80" fill="#3D3733"></rect>
+    <rect x="255" y="414" width="10" height="80" fill="#3D3733"></rect>
+    <rect x="310" y="400" width="180" height="14" rx="4" fill="#3D3733"></rect>
+    <rect x="325" y="414" width="10" height="80" fill="#3D3733"></rect>
+    <rect x="465" y="414" width="10" height="80" fill="#3D3733"></rect>
+    <rect x="520" y="400" width="180" height="14" rx="4" fill="#3D3733"></rect>
+    <rect x="535" y="414" width="10" height="80" fill="#3D3733"></rect>
+    <rect x="675" y="414" width="10" height="80" fill="#3D3733"></rect>
+  </g>
+  
+  <g transform="translate(190 390)">
+      <rect x="-40" y="-50" width="80" height="50" rx="4" fill="#1A1A1A"></rect>
+      <rect x="-36" y="-46" width="72" height="42" rx="2" fill="#7B82C9"></rect>
+      <rect x="-50" y="0" width="100" height="6" rx="2" fill="#EDE5D2"></rect>
+    </g><g transform="translate(400 390)">
+      <rect x="-40" y="-50" width="80" height="50" rx="4" fill="#1A1A1A"></rect>
+      <rect x="-36" y="-46" width="72" height="42" rx="2" fill="#E26D5A"></rect>
+      <rect x="-50" y="0" width="100" height="6" rx="2" fill="#EDE5D2"></rect>
+    </g><g transform="translate(610 390)">
+      <rect x="-40" y="-50" width="80" height="50" rx="4" fill="#1A1A1A"></rect>
+      <rect x="-36" y="-46" width="72" height="42" rx="2" fill="#5BAF7E"></rect>
+      <rect x="-50" y="0" width="100" height="6" rx="2" fill="#EDE5D2"></rect>
+    </g>
+  
+  <g transform="translate(190 320)">
+      <ellipse cx="0" cy="-5" rx="32" ry="38" fill="#1A1A1A"></ellipse>
+      <circle cx="0" cy="0" r="28" fill="#F0C9A0"></circle>
+      <path d="M -28 -5 Q -25 -30 0 -30 Q 25 -30 28 -5 Q 15 -18 0 -16 Q -15 -18 -28 -5 Z" fill="#1A1A1A"></path>
+      <circle cx="-9" cy="2" r="2.5" fill="#1A1A1A"></circle>
+      <circle cx="9" cy="2" r="2.5" fill="#1A1A1A"></circle>
+      <path d="M -7 12 Q 0 17 7 12" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" fill="none"></path>
+    </g><g transform="translate(400 320)">
+      <ellipse cx="0" cy="-5" rx="32" ry="38" fill="#3A2B1F"></ellipse>
+      <circle cx="0" cy="0" r="28" fill="#E8B58A"></circle>
+      <path d="M -28 -5 Q -25 -30 0 -30 Q 25 -30 28 -5 Q 15 -18 0 -16 Q -15 -18 -28 -5 Z" fill="#3A2B1F"></path>
+      <circle cx="-9" cy="2" r="2.5" fill="#1A1A1A"></circle>
+      <circle cx="9" cy="2" r="2.5" fill="#1A1A1A"></circle>
+      <path d="M -7 12 Q 0 17 7 12" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" fill="none"></path>
+    </g><g transform="translate(610 320)">
+      <ellipse cx="0" cy="-5" rx="32" ry="38" fill="#5C3A1F"></ellipse>
+      <circle cx="0" cy="0" r="28" fill="#D9A074"></circle>
+      <path d="M -28 -5 Q -25 -30 0 -30 Q 25 -30 28 -5 Q 15 -18 0 -16 Q -15 -18 -28 -5 Z" fill="#5C3A1F"></path>
+      <circle cx="-9" cy="2" r="2.5" fill="#1A1A1A"></circle>
+      <circle cx="9" cy="2" r="2.5" fill="#1A1A1A"></circle>
+      <path d="M -7 12 Q 0 17 7 12" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" fill="none"></path>
+    </g>
+  
+  <rect x="0" y="540" width="800" height="100" fill="#EDE5D2"></rect>
+  <line x1="0" y1="540" x2="800" y2="540" stroke="#1A1A1A" stroke-width="2" opacity="0.2"></line>
+  
+  <g fill="#E26D5A">
+    <path d="M 60 350 L 65 362 L 77 367 L 65 372 L 60 384 L 55 372 L 43 367 L 55 362 Z"></path>
+    <path d="M 750 460 L 754 470 L 764 474 L 754 478 L 750 488 L 746 478 L 736 474 L 746 470 Z"></path>
+  </g>
+</svg>
