@@ -9,6 +9,18 @@
   gtag('js', new Date());
 
   gtag('config', 'G-7NLXPDD8VJ');
+
+  // LINE体験申込ボタンのクリック計測
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="lin.ee"], a[href*="line.me"]');
+    if (!a) return;
+    gtag('event', 'generate_lead', {
+      method: 'LINE',
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 50),
+      page_path: location.pathname,
+      transport_type: 'beacon'
+    });
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
